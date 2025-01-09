@@ -4,7 +4,7 @@
     {
         Solution sol = new Solution();
 
-        Console.WriteLine(sol.solution0108(12, 23));
+        Console.WriteLine(sol.solution0109(100, 2));
     }
     
 }
