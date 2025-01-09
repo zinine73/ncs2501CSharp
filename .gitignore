@@ -73,5 +73,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-ncs2501CSharp.dll
-ncs2501CSharp.exe
+bin/Debug/net8.0/ncs2501CSharp.dll
+bin/Debug/net8.0/ncs2501CSharp.exe
