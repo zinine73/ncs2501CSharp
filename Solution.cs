@@ -1,6 +1,26 @@
 class Solution
 {
     /// <summary>
+    /// 숫자 비교하기
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int solution0113(int num1, int num2)
+    {
+        int answer = 0;
+        if (num1 == num2)
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = -1;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 나이 출력
     /// </summary>
     /// <param name="age">2022년도의 나이</param>
