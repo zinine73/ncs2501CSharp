@@ -1,6 +1,47 @@
 class Solution
 {
     /// <summary>
+    /// 배열의 평균값
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public double solution0115(int[] numbers)
+    {
+        /*
+        int sum = 0;
+        double answer = 0;
+        
+        // 배열의 요소만큼 반복
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            // 각 요소를 더한다
+            sum += numbers[i];
+        }
+        // 결과값을 배열의 크기로 나눈다
+        answer = (double)sum / numbers.Length;
+        return answer;
+        */
+
+        double answer = 0;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            answer += numbers[i];
+        }
+        answer /= numbers.Length;
+        return answer;
+
+        /*
+        double answer = 0;
+        foreach (var item in numbers)
+        {
+            answer += item;
+        }
+        answer /= numbers.Length;
+        return answer;
+        */
+    }
+
+    /// <summary>
     /// 양꼬치
     /// </summary>
     /// <param name="n"></param>
