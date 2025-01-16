@@ -1,5 +1,32 @@
 class Sample
 {
+    public void Queue_Stack()
+    {
+        // Queue
+        Queue<int> q = new Queue<int>();
+
+        q.Enqueue(120);
+        q.Enqueue(130);
+        q.Enqueue(150);
+
+        int next = q.Dequeue();
+        Console.WriteLine("Next:" + next);
+        Console.WriteLine("Count:" + q.Count);
+        next = q.Dequeue();
+        Console.WriteLine("Next:" + next);
+
+        // Stack
+        Stack<float> s = new Stack<float>();
+
+        s.Push(10.5f);
+        s.Push(3.54f);
+        s.Push(4.22f);
+
+        float val = s.Pop();
+        Console.WriteLine("val:" + val);
+        Console.WriteLine("Count:" + s.Count);
+    }
+
     public void List()
     {
         List<int> intlist = new List<int>();
