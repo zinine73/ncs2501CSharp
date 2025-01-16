@@ -3,10 +3,13 @@
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        int[] intarray = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
-        //Console.WriteLine(sol.solution0115(intarray));
-        Sample sam = new Sample();
-        sam.Queue_Stack();
+        int[] intarray = new int[]{1,2,3,4,5};
+        string str = "I love you~";
+        //Console.WriteLine(sol.solution01162(intarray,1,3));
+        Util.PrintIntArray(sol.solution01162(intarray,1,3));
+
+        //Sample sam = new Sample();
+        //sam.Queue_Stack();
     }
     
 }

@@ -1,6 +1,41 @@
 class Solution
 {
     /// <summary>
+    /// 배열 나누기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int[] solution01162(int[] numbers, int num1, int num2)
+    {
+        // 리턴할 배열의 크기를 먼저 구한다
+        int len = num2 - num1 + 1;
+        // 구한 크기만큼 배열을 선언
+        int[] answer = new int[len];
+        // 크기만큼 반복
+        for (int i = 0; i < len; i++)
+        {
+            // 인덱스에 해당하는 값을 배열에 넣는다
+            answer[i] = numbers[num1 + i];
+        }
+        // 배열 리턴
+        return answer;
+    }
+
+    /// <summary>
+    /// 편지
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+    public int solution0116(string message)
+    {
+        int answer = 0;
+        answer = message.Length * 2;
+        return answer;
+    }
+
+    /// <summary>
     /// 배열의 평균값
     /// </summary>
     /// <param name="numbers"></param>
