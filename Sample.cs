@@ -1,5 +1,41 @@
+using System.Collections;
+
 class Sample
 {
+    public void Dictionary()
+    {
+        
+        // var
+        var chr = new List<char>();
+        var dic = new Dictionary<int, int>();
+
+        // hashtable
+        Hashtable ht = new Hashtable();
+        ht.Add("irina", "Irina SP");
+        ht.Add("tom", "Tom Cr");
+
+        if (ht.Contains("tom"))
+        {
+            Console.WriteLine(ht["tom"]);
+        }
+
+        // dictionary
+        Dictionary<int, string> emp = new Dictionary<int, string>();
+        emp.Add(1001, "Jane");
+        emp.Add(1002, "Tom");
+        emp.Add(1003, "Cindy");
+        
+        Console.WriteLine("Count:" + emp.Count);
+
+        string name = emp[1002];
+        Console.WriteLine(name);
+        if (emp.ContainsKey(1004))
+        {
+            name = emp[1004];
+            Console.WriteLine(name);
+        }
+    }
+
     public void Queue_Stack()
     {
         // Queue
