@@ -1,6 +1,61 @@
 class Solution
 {
     /// <summary>
+    /// 짝수 홀수 개수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] solution01172(int[] num_list)
+    {
+        int[] answer = new int[2];
+        foreach (var item in num_list)
+        {
+            if (item % 2 == 0)
+            {
+                answer[0]++;
+            }
+            else
+            {
+                answer[1]++;
+            }
+        }
+
+        return answer;
+    }
+    /// <summary>
+    /// 머쓱이보다 키 큰 사람
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public int solution0117(int[] array, int height)
+    {
+        int answer = 0;
+        // for
+        // 배열 크기만큼 반복
+/*         for (int i = 0; i < array.Length; i++)
+        {
+            // 머쓱이 키와 비교
+            if (array[i] > height)
+            {
+                // 크면 결과값 + 1
+                answer++;
+            }
+        } */
+
+        // foreach        
+        foreach (var item in array)
+        {
+            if (item > height)
+            {
+                answer++;
+            }
+        }
+        // 결과값 리턴
+        return answer;
+    }
+
+    /// <summary>
     /// 배열 나누기
     /// </summary>
     /// <param name="numbers"></param>
