@@ -1,8 +1,58 @@
 using System.Collections;
+using System.Text;
 
 class Sample
 {
-    
+    public void StringBuilderSample()
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 26; i++)
+        {
+            sb.Append((char)('A'+ i));
+            sb.Append(System.Environment.NewLine);
+        }
+        string s = sb.ToString();
+        Console.WriteLine(s);
+    }
+
+    public void StringSample()
+    {
+        string s1 = "C#";
+        string s2 = "Programming";
+        //char c1 = 'A';
+        //char c2 = 'B';
+
+        string s3 = s1 + " " + s2;
+        //Console.WriteLine("String: {1} {0}", s3, 10);
+        Console.WriteLine($"String: {10} {s3}");
+
+        string s3substring = s3.Substring(1, 5);
+        //Console.WriteLine("Substring: {0}", s3substring);
+        Console.WriteLine($"Substring: {s3substring}");
+
+        string s = "C# Studies";
+        for (int i = 0; i < s.Length; i++)
+        {
+            //Console.WriteLine("{0}: {1}", i, s[i]);
+            Console.WriteLine($"{i}: {s[i]}");
+        }
+
+        string str = "Hello";
+        char[] charArray = str.ToCharArray();
+        for (int i = 0; i < charArray.Length; i++)
+        {
+            Console.WriteLine(charArray[i]);
+        }
+
+        char[] charArray2 = {'A','B','C','D'};
+        s = new string(charArray2);
+        Console.WriteLine(s);
+
+        char c1 = 'A';
+        char c2 = (char)(c1 + 3);
+        Console.WriteLine(c2);
+    }
+
     public void Dictionary()
     {
         
