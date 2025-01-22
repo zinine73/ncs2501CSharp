@@ -3,6 +3,45 @@ using System.Text;
 
 class Sample
 {
+    enum City
+    {
+        PyungYang,
+        Seoul,
+        Deajun,
+        Busan = 5,
+        Jeju = 10
+    }
+
+    [Flags]
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8
+    }
+
+    public void EnumSample()
+    {
+        City myCity;
+        myCity = City.Seoul;
+        int cityValue = (int)myCity;
+        if (myCity == City.Seoul)
+        {
+            Console.WriteLine("Welcome to Seoul");
+        }
+
+        Border b = Border.Top | Border.Bottom | Border.Left;
+        if ((b & Border.Top) != 0)
+        {
+            if (b.HasFlag(Border.Bottom))
+            {
+                Console.WriteLine(b.ToString()); // (int)b => 13
+            }
+        }
+    }
+
     public void StringBuilderSample()
     {
         StringBuilder sb = new StringBuilder();
