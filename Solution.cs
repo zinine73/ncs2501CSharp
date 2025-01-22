@@ -1,6 +1,31 @@
 class Solution
 {
     /// <summary>
+    /// 배열의 유사도
+    /// </summary>
+    /// <param name="s1"></param>
+    /// <param name="s2"></param>
+    /// <returns></returns>
+    public int Solution0122(string[] s1, string[] s2)
+    {
+        int answer = 0;
+        // s1의 크기만큼 반복
+        foreach (var item1 in s1)
+        {
+            // s2의 크기만큼 반복
+            foreach (var item2 in s2)
+            {
+                // 같은게 있으면 answer++
+                if (item1 == item2)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열 두 배 만들기
     /// </summary>
     /// <param name="numbers"></param>
