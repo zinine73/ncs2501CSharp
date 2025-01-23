@@ -1,6 +1,23 @@
 class Solution
 {
     /// <summary>
+    /// 아이스아메리카노
+    /// </summary>
+    /// <param name="money"></param>
+    /// <returns></returns>
+    public int[] Solution0123(int money)
+    {
+        /*
+        const int COFFEE_PRICE = 5500;
+        int[] answer = new int[2];
+        answer[0] = money / COFFEE_PRICE;
+        answer[1] = money % COFFEE_PRICE;
+        return answer;
+        */
+        return new int[]{money / 5500, money % 5500};
+    }
+
+    /// <summary>
     /// 배열의 유사도
     /// </summary>
     /// <param name="s1"></param>
