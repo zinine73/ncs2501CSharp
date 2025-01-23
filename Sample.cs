@@ -1,8 +1,63 @@
 using System.Collections;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 class Sample
 {
+    public void Operator()
+    {
+        // 나머지 연산자 %
+        int a = (10 + 2 - 1) * (4 / 2) % 3;
+
+        // 할당 연산자 +=, -=, *=, /=, %=
+        a %= 2;
+
+        // 증감 연산자
+        a++; // a = a + 1 // a += 1
+        a--; // a = a - 1 // a -= 1
+        
+        // 증감연산자를 앞에 붙이냐 뒤에 붙이냐 
+        ++a; // 맨먼저 ++ 계산한다
+
+        int b = 1, c = 2;
+        bool d = true;
+        // 논리 연산자
+        if ((a > 1 && b < 0) || c == 1 || !d) a = 0;
+
+        // 비교 연산자
+        if (a <= b) a = 0;
+
+        // 비트 연산자
+        byte aa = 0b_0000_0111; // 7
+        byte bb = (byte)((aa & 3) | 4);
+        Console.WriteLine($"byte bb: {bb}");
+
+        // shift 연산자 : << = *2 : >> = /2
+        int i = 2;
+        i = i << 5;
+        Console.WriteLine($"2 after left Shift 5 : {i}");                       
+
+        // 조건 연산자
+        int val = (a>b) ? a : b;
+        int? iii = null;
+        i = iii ?? 0;
+        
+        string s = null;
+        //string ss = s ?? string.Empty;
+        string ss;
+        if (s == null)
+        {
+            ss = string.Empty;
+        }
+        else
+        {
+            ss = s;
+        }
+        ss = s ?? "Don't do this";
+    }
+
     enum City
     {
         PyungYang,
