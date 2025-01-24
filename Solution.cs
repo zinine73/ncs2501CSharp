@@ -1,5 +1,58 @@
+using System.Text;
+
 class Solution
 {
+    /// <summary>
+    /// 문자열 뒤집기2
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="s"></param>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public string Solution01242(string my_string, int s, int e)
+    {
+        // Reverse
+        // char[] chr = my_string.ToCharArray();
+        // int len = e - s + 1;
+        // Array.Reverse(chr, s, len);
+        // string answer = new string(chr);
+        // return answer;
+        char[] chr = my_string.ToCharArray();
+        Array.Reverse(chr, s, e - s + 1);
+        return new string(chr);
+    }
+
+    /// <summary>
+    /// 문자열 뒤집기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0124(string my_string)
+    {
+        string answer = string.Empty;
+        // 입력된 문자열을 처음부터 반복한다
+        /*
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            // 출력할 문자열의 뒤에서부터 넣는다
+            answer = my_string[i] + answer;
+        }
+        */
+        /*
+        foreach (var item in my_string)
+        {
+            answer = item + answer;
+        }
+        */
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in my_string)
+        {
+            sb.Insert(0, item);
+        }
+        answer = sb.ToString();
+        return answer;
+    }
+
     /// <summary>
     /// 아이스아메리카노
     /// </summary>
