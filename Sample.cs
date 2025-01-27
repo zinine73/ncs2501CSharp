@@ -3,9 +3,77 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System;
+using System.Collections.Generic;
 
 class Sample
 {
+    public void DoWhileSample()
+    {
+        int i = 100;
+        Console.Write("Do While:");
+        do
+        {
+            Console.Write($" {i}");
+            i++;
+        } while (i < 10);
+        Console.WriteLine();
+
+        i = 100;
+        Console.Write("While:");
+        while(i < 10) 
+        {
+            Console.Write($" {i}");
+            i++;
+        }
+        Console.WriteLine();
+    }
+
+    const int MAX_LOOP = 10;
+    public void LoopSample()
+    {
+        // for 감소식 (10...1)
+        for (int i = MAX_LOOP; i > 0; i--)
+        {
+            Console.Write($"Loop{i}>");
+        }
+        Console.WriteLine();
+        // While
+        int ii = MAX_LOOP;
+        while (ii > 0)
+        {
+            Console.Write($"While{ii}>");
+            ii--;
+        }
+        Console.WriteLine();
+
+        string[] array = new string[]{"AB","cd","ef"};
+        foreach (var item in array)
+        {
+            //Console.WriteLine(item);
+        }
+
+        string[,,] arr = new string[,,]{
+            {{"1","2"},{"11","22"}},
+            {{"3","4"},{"33","44"}}
+        };
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                for (int k = 0; k < arr.GetLength(2); k++)
+                {
+                    Console.Write($"{arr[i, j, k]} ");
+                }
+            }
+        }
+        Console.WriteLine();
+        foreach (var item in arr)
+        {
+            Console.Write($"{item} ");
+        }
+    }
+
     static bool verbose = false;
     static bool continueOnError = false;
     static bool logging = false;
