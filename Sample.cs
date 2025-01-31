@@ -8,6 +8,13 @@ using System.Collections.Generic;
 
 class Sample
 {
+    public IEnumerable<int> GetNumber()
+    {
+        yield return 10;
+        yield return 20;
+        yield return 30;
+    }
+
     public void DoWhileSample()
     {
         int i = 100;
