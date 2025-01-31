@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Security.Cryptography;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -7,10 +9,11 @@
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{1,1,1,1,1,2};
         string str = "nice to meet you";
-        Console.WriteLine(sol.Solution01312(15));
+        //Console.WriteLine(sol.Solution01312(15));
         //Util.PrintIntArray(sol.Solution0131(intarray));
 
         //Sample sam = new Sample();
 
+        Util.MakeLotto();
     }
 }
