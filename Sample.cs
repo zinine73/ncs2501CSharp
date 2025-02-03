@@ -5,9 +5,52 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 class Sample
 {
+    public void TryCatch()
+    {
+        int[] intarray = new int[]{1,2,3,4};
+        // try-catch 없이 실행
+        try
+        {
+            DoSomething(intarray);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ERROR!!!:{ex}");
+        }
+
+        /*
+        // try-catch
+        try
+        {
+            // 실행할 것들
+            DoSomething(intarray);
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            // 에러 처리
+            Console.WriteLine($"에러가 발생했습니다:{ex}");
+        }
+        catch (ArgumentException aex)
+        {
+            Console.WriteLine($"다른 에러...{aex}");
+        }
+        finally
+        {
+            Console.WriteLine("끝났음.");
+        }
+        */
+    }
+
+    private void DoSomething(int[] ia)
+    {
+        Console.WriteLine("뭔가 하고있음");
+        ia[5] = 0;
+    }
+
     public IEnumerable<int> GetNumber()
     {
         yield return 10;

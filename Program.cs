@@ -12,8 +12,7 @@ internal class Program
         //Console.WriteLine(sol.Solution01312(15));
         //Util.PrintIntArray(sol.Solution0131(intarray));
 
-        //Sample sam = new Sample();
-
-        Util.MakeLotto();
+        Sample sam = new Sample();
+        sam.TryCatch();
     }
 }
