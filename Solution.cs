@@ -4,6 +4,27 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 첫 번째로 나오는 음수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution0203(int[] num_list)
+    {
+        // num_list의 길이 만큼 반복
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            // 현재 인덱스의 num_list 값과 0 비교
+            if (num_list[i] < 0)
+            {
+                // 작으면 현재 인덱스 리턴
+                return i;
+            }
+        }
+        // 아니면 -1 리턴
+        return -1;
+    }
+
+    /// <summary>
     /// 피자 나눠 먹기 (1)
     /// </summary>
     /// <param name="n"></param>
