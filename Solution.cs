@@ -4,6 +4,82 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 수 조작하기2
+    /// </summary>
+    /// <param name="numlog"></param>
+    /// <returns></returns>
+    public string Solution02042(int[] numlog)
+    {
+        string answer = string.Empty;
+        // 문자열 계산을 할때는 StringBuilder를 쓰자
+        // StringBuilder 사용을 위해서는 using System.Text가 필요하다
+        StringBuilder sb = new StringBuilder();
+        // 주어진 문자열 길이 -1 만큼 반복
+        for (int i = 0; i < numlog.Length - 1; i++)
+        {
+            // 다음 값 - 지금 값
+            int val = numlog[i+1] - numlog[i];
+            // 해당 문자를 결과에 더한다
+            /*
+            if (val == 1)           sb.Append('w');
+            else if (val == -1)     sb.Append('s');
+            else if (val == 10)     sb.Append('d');
+            else if (val == -10)    sb.Append('a');
+            */
+            switch (val)
+            {
+                case 1:     sb.Append('w'); break;
+                case -1:    sb.Append('s'); break;
+                case 10:    sb.Append('d'); break;
+                case -10:   sb.Append('a'); break;
+            }
+        }
+        // StringBuilder을 반환하기전, ToString을 해주자
+        answer = sb.ToString();
+        return answer;
+    }
+    
+    /// <summary>
+    /// 수 조작하기1
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="control"></param>
+    /// <returns></returns>
+    public int Solution0204(int n, string control)
+    {
+        bool exit = false;
+        // control의 길이만큼 반복
+        foreach (var item in control)
+        {
+            if (exit == true) break;
+            // 해당문자에 따른 n 계산
+            switch (item)
+            {
+                case 'w':   n++;        break;
+                case 's':   n--;        break;
+                case 'd':   n += 10;    break;
+                case 'a':   n -= 10;    break;
+                default:
+                    Console.WriteLine("Error!!!");
+                    exit = true;
+                    break;
+            }
+            /*
+            if      (item.Equals('w'))  n++;
+            else if (item.Equals('s'))  n--;
+            else if (item.Equals('d'))  n += 10;
+            else if (item.Equals('a'))  n -= 10;
+            else
+            {
+                Console.WriteLine("Error!!!");
+                break;
+            }*/
+        }
+        // n 리턴
+        return n;
+    }
+
+    /// <summary>
     /// 첫 번째로 나오는 음수
     /// </summary>
     /// <param name="num_list"></param>
