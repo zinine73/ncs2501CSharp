@@ -9,6 +9,8 @@ using System.Diagnostics;
 
 class Sample
 {
+    
+
     public void TryCatch()
     {
         int[] intarray = new int[]{1,2,3,4};
