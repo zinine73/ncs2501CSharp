@@ -4,6 +4,51 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 홀수 vs 짝수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution0207(int[] num_list)
+    {
+        // 홀수의 합을 넣을 변수 선언
+        int hol = 0;
+        // 짝수의 합을 넣을 변수 선언
+        int jak = 0;
+        /*
+        // 주어진 배열 크기만큼 반복
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            // 인덱스가 홀수냐 짝수냐 판별
+            if (i % 2 == 1)
+            {
+                // 홀수면 홀수합에 더하고
+                hol += num_list[i];
+            }
+            else
+            {
+                // 짝수면 짝수합에 더한다
+                jak += num_list[i];
+            }
+        }
+        */
+        bool nowHol = true;
+        foreach (var item in num_list)
+        {
+            if (nowHol)
+            {
+                hol += item;
+            }
+            else
+            {
+                jak += item;
+            }
+            nowHol = !nowHol;
+        }
+        // 둘 중 큰 값 리턴
+        return Math.Max(hol, jak);
+    }
+
+    /// <summary>
     /// 카운트 업
     /// </summary>
     /// <param name="start"></param>
