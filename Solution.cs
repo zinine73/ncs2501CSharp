@@ -4,6 +4,36 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 자릿수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution02102(int n)
+    {
+        int answer = 0;
+        // n을 string으로 변환
+        string str = n.ToString();
+        // string을 처음부터 반복
+        foreach (var item in str)
+        {
+            // 각 char의 계산된 값을 더한다
+            answer += (item - '0');
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 주사위의 개수
+    /// </summary>
+    /// <param name="box"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0210(int[] box, int n)
+    {
+        return (box[0] / n) * (box[1] / n) * (box[2] / n);
+    }
+
+    /// <summary>
     /// 홀수 vs 짝수
     /// </summary>
     /// <param name="num_list"></param>
