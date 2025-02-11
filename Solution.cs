@@ -1,8 +1,68 @@
-using System.Formats.Asn1;
 using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 짝수는 싫어요
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution02112(int n)
+    {
+        // list 정의
+        //List<int> list = new List<int>();
+        var list = new List<int>();
+        // 1부터 n(포함)까지 반복
+        for (int i = 1; i <= n; i++)
+        {
+            // 홀수냐?
+            if (i % 2 != 0)
+            {
+                // 홀수면 list에 넣기
+                list.Add(i);
+            }
+        }
+        // list를 int[] 형식으로 리턴
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 0 떼기
+    /// </summary>
+    /// <param name="n_str"></param>
+    /// <returns></returns>
+    public string Solution0211(string n_str)
+    {
+        string answer = string.Empty;
+        int temp = Convert.ToInt32(n_str);
+        answer = temp.ToString();
+        return answer;
+        //return Convert.ToInt32(n_str).ToString();
+        /*
+        string answer = string.Empty;
+        // 0이 지속되는지 여부 변수 : zero
+        bool zero = true;
+        // zero 변수가 참일때 반복
+        while (zero)
+        {
+            // 현재 맨 앞에 문자가 0인지 판별
+            //if (n_str[0] == '0')
+            if (n_str[0].CompareTo('0') == 0)
+            {
+                // 0이면 지우기
+                n_str = n_str.Substring(1);//, n_str.Length - 1);
+            }
+            else
+            {
+                // zero변수를 false로
+                zero = false;
+            }
+        }
+        answer = n_str;
+        return answer;
+        */
+    }
+
     /// <summary>
     /// 자릿수 더하기
     /// </summary>

@@ -6,9 +6,9 @@
         string[] s1 = new string[]{"I", "Love", "Programmers."};
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{10,8,6};
-        string str = "wsdawsdaxssw";
-        Console.WriteLine(sol.Solution02102(930211));
-        //Util.PrintIntArray(sol.Solution0206(3,10));
+        string str = "00854020";
+        //Console.WriteLine(sol.Solution02112(str));
+        Util.PrintIntArray(sol.Solution02112(15));
 
         //Sample sam = new Sample();
         //sam.TryCatch();
