@@ -5,14 +5,19 @@
         Solution sol = new Solution();
         string[] s1 = new string[]{"I", "Love", "Programmers."};
         string[] s2 = new string[]{"m","dot"};
-        int[] intarray = new int[]{10,8,6};
+        int[] intarray = new int[]{12, 4, 15, 46, 38, 1, 14, 56, 32, 10};
         string str = "00854020";
-        //Console.WriteLine(sol.Solution02112(str));
-        //Util.PrintIntArray(sol.Solution02112(15));
+        Console.WriteLine(sol.Solution02122(2,4));
+        //Util.PrintIntArray(sol.Solution0212(intarray));
 
         Sample sam = new Sample();
         int ret = sam.Calc(1, 2, "+");
         ret = sam.Calc(3, 4);
+    }
+
+    private void MethodSample()
+    {
+        Sample sam = new Sample();
 
         sam.Method1("LEE", 12, 12);
         sam.Method1("KIM", score:10, age:12);
