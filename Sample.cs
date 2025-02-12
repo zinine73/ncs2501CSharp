@@ -9,7 +9,81 @@ using System.Diagnostics;
 
 class Sample
 {
-    
+    public int Calc2(params int[] values)
+    {
+        int answer = 0;
+        foreach (var item in values)
+        {
+            answer += item;
+        }
+        return answer;
+    }
+
+    public int Calc(int a, int b, string calcType = "+")
+    {
+        switch (calcType)
+        {
+            case "+": return a + b;
+            case "-": return a - b;
+            case "*": return a * b;
+            case "/": return a / b;
+            default: throw new ArithmeticException();
+        }
+    }
+
+    public void Method1(string name, int age, int score, int child = 0)
+    {
+
+    }
+
+    public void NullableTest()
+    {
+        int? a = null;
+        int? b = 0;
+        int result = Nullable.Compare<int>(a, b);
+        Console.WriteLine(result);
+
+        double? c = 0.01;
+        double? d = 0.0100;
+        bool result2 = Nullable.Equals<double>(c, d);
+        Console.WriteLine(result2);
+    }
+
+    float sum = 0;
+    DateTime time;
+    bool? selected;
+
+    public void CheckInput(int? i, float? d, DateTime? time, bool? selected)
+    {
+        if (i.HasValue && d.HasValue)
+        {
+            this.sum = (float)i.Value + (float)d.Value;
+        }
+
+        if (!time.HasValue)
+            throw new ArgumentException();
+        else
+            this.time = time.Value;
+
+        //this.selected = selected ?? false;
+        if (selected == null)
+            this.selected = false;
+        else
+            this.selected = selected;
+    }
+
+    public void NullableSample()
+    {
+        int i = 0;
+        int? ii = null;
+        bool? b = null;
+        int?[] a = new int?[100];
+
+        if (ii != null)
+        {
+            Console.WriteLine(i);
+        }
+    }
 
     public void TryCatch()
     {

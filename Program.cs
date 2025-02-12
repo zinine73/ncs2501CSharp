@@ -8,10 +8,49 @@
         int[] intarray = new int[]{10,8,6};
         string str = "00854020";
         //Console.WriteLine(sol.Solution02112(str));
-        Util.PrintIntArray(sol.Solution02112(15));
+        //Util.PrintIntArray(sol.Solution02112(15));
 
-        //Sample sam = new Sample();
-        //sam.TryCatch();
+        Sample sam = new Sample();
+        int ret = sam.Calc(1, 2, "+");
+        ret = sam.Calc(3, 4);
+
+        sam.Method1("LEE", 12, 12);
+        sam.Method1("KIM", score:10, age:12);
+        sam.Method1("PARK", child:1, age:30, score:20);
+
+        Console.WriteLine(sam.Calc2(1,2,3,4));
+        Console.WriteLine(sam.Calc2(6,7,8,9,10,11));
+    }
+
+    private void refout()
+    {
+        // ref : 초기화 필요
+        int x = 1;
+        double y = 1.0;
+        double ret = GetData(ref x, ref y);
+        
+        // out : 초기화 불필요
+        int c, d;
+        bool bret = GetData(10, 20, out c, out d);
+    }
+
+    static double GetData(ref int a, ref double b)
+    {
+        return ++a * ++b;
+    }
+
+    static bool GetData(int a, int b, out int c, out int d)
+    {
+        c = a + b;
+        d = a - b;
+        return true;
+    }
+
+    private void Calculate(int a)
+    {
+        Console.WriteLine($"before:{a}");
+        a *= 2;
+        Console.WriteLine($"after:{a}");
     }
 
     struct MyPoint
