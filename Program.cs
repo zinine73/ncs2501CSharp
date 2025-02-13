@@ -5,14 +5,34 @@
         Solution sol = new Solution();
         string[] s1 = new string[]{"I", "Love", "Programmers."};
         string[] s2 = new string[]{"m","dot"};
-        int[] intarray = new int[]{12, 4, 15, 46, 38, 1, 14, 56, 32, 10};
+        int[] intarray = new int[]{1};
         string str = "00854020";
-        Console.WriteLine(sol.Solution02122(2,4));
-        //Util.PrintIntArray(sol.Solution0212(intarray));
+        //Console.WriteLine(sol.Solution02122(2,4));
+        Util.PrintIntArray(sol.Solution0213(intarray));
 
-        Sample sam = new Sample();
-        int ret = sam.Calc(1, 2, "+");
-        ret = sam.Calc(3, 4);
+        //Sample sam = new Sample();
+        //int ret = sam.Calc(1, 2, "+");
+        //ret = sam.Calc(3, 4);
+    }
+
+    void EventSample()
+    {
+        MyButton btn = new MyButton();
+        btn.Click += new EventHandler(btn_Click);
+        btn.Click += new EventHandler(btn_down);
+        btn.Click -= new EventHandler(btn_Click);
+        btn.Text = "Run";
+        btn.MouseButtonDown();
+    }
+
+    static void btn_Click(object sender, EventArgs e)
+    {
+        Console.WriteLine("button click");
+    }
+
+    static void btn_down(object sender, EventArgs e)
+    {
+        Console.WriteLine("button down");
     }
 
     private void MethodSample()
