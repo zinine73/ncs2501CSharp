@@ -1,3 +1,6 @@
+#define TEST_ENV
+#define NINTENDO // ANDROID
+
 using System.Collections;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
@@ -9,6 +12,44 @@ using System.Diagnostics;
 
 class Sample
 {
+    #region Public
+    public int abc;
+    public float cde;
+    #endregion Public
+
+    #region Private
+    private int nnn;
+    private bool jijij;
+    private bool testEnv;
+    #endregion
+
+    #region Property
+    public int ABC { get; set;}
+    #endregion
+    
+    #region Method
+    public void Run(){}
+    public void Create(){}
+    #endregion
+
+    public void PreProcess()
+    {
+#if (TEST_ENV)
+        Console.WriteLine("Now Test env.");
+    #if (ANDROID)
+        Console.WriteLine("platform : android");
+    #elif (IOS)
+        Console.WriteLine("platform : IOS");
+    #elif (NINTENDO)
+        Console.WriteLine("platform : NINTENDO");
+    #else
+        Console.WriteLine("platform : PC");
+    #endif
+#else
+        Console.WriteLine("Now Production env.");
+#endif
+    }
+
     public int Calc2(params int[] values)
     {
         int answer = 0;

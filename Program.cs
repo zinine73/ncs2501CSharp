@@ -8,11 +8,10 @@
         int[] intarray = new int[]{1};
         string str = "00854020";
         //Console.WriteLine(sol.Solution02122(2,4));
-        Util.PrintIntArray(sol.Solution0213(intarray));
+        //Util.PrintIntArray(sol.Solution0213(intarray));
 
-        //Sample sam = new Sample();
-        //int ret = sam.Calc(1, 2, "+");
-        //ret = sam.Calc(3, 4);
+        Sample sam = new Sample();
+        sam.PreProcess();
     }
 
     void EventSample()
