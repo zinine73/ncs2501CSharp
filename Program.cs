@@ -7,11 +7,11 @@
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{1};
         string str = "00854020";
-        //Console.WriteLine(sol.Solution02122(2,4));
+        Console.WriteLine(sol.Solution0214(7,15));
         //Util.PrintIntArray(sol.Solution0213(intarray));
 
-        Sample sam = new Sample();
-        sam.PreProcess();
+        //Sample sam = new Sample();
+        //sam.PreProcess();
     }
 
     void EventSample()

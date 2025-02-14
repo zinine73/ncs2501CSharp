@@ -3,6 +3,25 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 세균 증식
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    public int Solution0214(int n, int t)
+    {
+        return n << t;
+        //return (int)(n * Math.Pow(2, t));
+        /*
+        for (int i = 0; i < t; i++)
+        {
+            n *= 2;
+        }
+        return n;
+        */
+    }
+
+    /// <summary>
     /// 배열의 원소만큼 추가하기
     /// </summary>
     /// <param name="arr"></param>
