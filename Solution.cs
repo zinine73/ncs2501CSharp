@@ -2,6 +2,11 @@ using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 콜라츠 수열 만들기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int[] Solution0217(int n)
     {
         // List를 하나 만들자
