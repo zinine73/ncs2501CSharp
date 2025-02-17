@@ -2,6 +2,33 @@ using System.Text;
 
 class Solution
 {
+    public int[] Solution0217(int n)
+    {
+        // List를 하나 만들자
+        var list = new List<int>();
+        // while 로 돌리자
+        while (n != 1)
+        {
+            // n 을 List에 넣는다
+            list.Add(n);
+            // n 이 짝수인지 판별
+            if (n % 2 == 0)
+            {
+                // 짝수일 때 변형
+                n /= 2;
+            }
+            else
+            {
+                // 홀수일 때 변형
+                n = 3 * n + 1;
+            }
+        }
+        // 마지막으로 할 일
+        list.Add(1);
+        // List를 배열혛식으로 리턴
+        return list.ToArray();
+    }
+
     /// <summary>
     /// 세균 증식
     /// </summary>

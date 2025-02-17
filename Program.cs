@@ -7,11 +7,21 @@
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{1};
         string str = "00854020";
-        Console.WriteLine(sol.Solution0214(7,15));
-        //Util.PrintIntArray(sol.Solution0213(intarray));
+        //Console.WriteLine(sol.Solution0214(7,15));
+        Util.PrintIntArray(sol.Solution0217(10));
 
         //Sample sam = new Sample();
         //sam.PreProcess();
+    }
+
+    private static void IndexerSample()
+    {
+        MyClass cls = new MyClass();
+        cls.SetName("KIM");
+        cls[1] = 1024;
+        int i = cls[1];
+        int ii = cls["KIM"];
+        cls["LEE"] = 3;
     }
 
     void EventSample()
