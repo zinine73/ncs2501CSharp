@@ -3,6 +3,39 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 5명씩
+    /// </summary>
+    /// <param name="names"></param>
+    /// <returns></returns>
+    public string[] Solution0218(string[] names)
+    {
+        // string List 를 하나 만들자
+        var list = new List<string>();
+        // 5번째를 체크하는 int 값 (= idx)도 하나 만들자
+        int idx = 0;
+        // names를 전체 반복
+        foreach (var item in names)
+        {
+            // 체크하는 값이 처음이냐
+            if (idx == 0)
+            {
+                // 리스트에 넣기
+                list.Add(item);
+            }
+            // idx++
+            idx++;
+            // idx == 5 ?
+            if (idx == 5)
+            {
+                // idx = 0;
+                idx = 0;
+            }
+        }
+        // string 배열로 리턴
+        return list.ToArray();
+    }
+
+    /// <summary>
     /// 콜라츠 수열 만들기
     /// </summary>
     /// <param name="n"></param>

@@ -3,15 +3,47 @@
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = new string[]{"I", "Love", "Programmers."};
+        string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{1};
         string str = "00854020";
-        //Console.WriteLine(sol.Solution0214(7,15));
-        Util.PrintIntArray(sol.Solution0217(10));
+        //Console.WriteLine(sol.Solution0218(s1));
+        Util.PrintStringArray(sol.Solution0218(s1));
 
         //Sample sam = new Sample();
         //sam.PreProcess();
+    }
+
+    private void ClassTest()
+    {
+        Animal anima = new Animal();
+        anima.Age = 30;
+        anima.Name = "Ani";
+        anima.SetSize(3.4f);
+        anima.ShowSize();
+
+        Dog puppy = new Dog();
+        puppy.Age = 3;
+        puppy.Name = "Puppy";
+        puppy.HowOld();
+        puppy.SetSize(1.2f);
+        puppy.ShowSize();
+
+        Bird sae = new Bird();
+        sae.Name = "Jack";
+        sae.Age = 10;
+        sae.Fly();
+
+        NewPices np = new NewPices();
+        np.Age = 100;
+        np.Name = "ET";
+        np.SetSize(200f);
+        np.ShowSize();
+
+        //PureBase pb = new PureBase();
+        ChildA ca = new ChildA();
+        ca.GetFirst();
+        ca.GetNext();
     }
 
     private static void IndexerSample()
