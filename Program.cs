@@ -5,10 +5,10 @@
         Solution sol = new Solution();
         string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
-        int[] intarray = new int[]{1};
+        int[] intarray = new int[]{-1,2};
         string str = "00854020";
-        //Console.WriteLine(sol.Solution0218(s1));
-        Util.PrintStringArray(sol.Solution0218(s1));
+        Console.WriteLine(sol.Solution02192(intarray));
+        //Util.PrintStringArray(sol.Solution0218(s1));
 
         //Sample sam = new Sample();
         //sam.PreProcess();

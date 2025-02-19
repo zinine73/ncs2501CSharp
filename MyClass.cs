@@ -2,8 +2,18 @@ class MyClass
 {
     private const int MAX = 10;
     private string name;
-
     private int[] data = new int[MAX];
+    private int val = 1;
+
+    public int InstRun()
+    {
+        return val;
+    }
+
+    public static int Run()
+    {
+        return 1;
+    }
 
     public void SetName(string strName)
     {
@@ -55,4 +65,36 @@ class MyClass
             }
         }
     }
+}
+
+public class Client
+{
+    public void Test()
+    {
+        MyClass myClass = new MyClass();
+        int i = myClass.InstRun();
+
+        int j = MyClass.Run();
+    }
+}
+
+public static class MyUtility
+{
+    private static int ver;
+
+    static MyUtility()
+    {
+        ver = 1;
+    }
+
+    public static string Convert(int i)
+    {
+        return i.ToString();
+    }
+
+    public static int ConvertBack(string s)
+    {
+        return int.Parse(s);
+    }
+
 }

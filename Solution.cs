@@ -1,7 +1,64 @@
+using System.Formats.Asn1;
 using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 최댓값 만들기(2)
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution02192(int[] numbers)
+    {
+        //int answer = -10000 * 10000;
+        int answer = int.MinValue;
+        // for문을 중첩으로 돌린다
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                // 각각의 인덱스 값을 곱해서 나온 값과 현재 최대값을 비교
+                if (answer < numbers[i] * numbers[j])
+                {
+                    // 큰값을 최대값으로
+                    answer = numbers[i] * numbers[j];
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 최댓값 만들기(1)
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution0219(int[] numbers)
+    {
+        int answer = 0;
+        /*
+        // for문을 중첩으로 돌린다
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                // 각각의 인덱스 값을 곱해서 나온 값과 현재 최대값을 비교
+                if (answer < numbers[i] * numbers[j])
+                {
+                    // 큰값을 최대값으로
+                    answer = numbers[i] * numbers[j];
+                }
+            }
+        }
+        */
+        // 입력값을 정렬
+        var list = new List<int>(numbers);
+        list.Sort();
+        // 마지막 수와 마지막 전 수 를 곱한다
+        answer = list[list.Count - 1] * list[list.Count - 2];
+        return answer;
+    }
+
     /// <summary>
     /// 5명씩
     /// </summary>
