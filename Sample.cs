@@ -94,6 +94,14 @@ class Sample
     DateTime time;
     bool? selected;
 
+    /// <summary>
+    /// 인풋 값 체크
+    /// </summary>
+    /// <param name="i"></param>
+    /// <param name="d">null값 가질 수 있음</param>
+    /// <param name="time"></param>
+    /// <param name="selected"></param>
+    /// <exception cref="ArgumentException"></exception>
     public void CheckInput(int? i, float? d, DateTime? time, bool? selected)
     {
         if (i.HasValue && d.HasValue)

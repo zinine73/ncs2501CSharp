@@ -4,6 +4,54 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 삼각형의 완성조건(2)
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Solution02202(int[] sides)
+    {
+        int answer = 0;
+        // 큰값과 작은값으로 별도의 변수를 잡는다
+        int big = Math.Max(sides[0], sides[1]);
+        int small = Math.Min(sides[0], sides[1]);
+        // x + small > big
+        // big - small < x <= big
+        for (int i = big - small + 1; i <= big; i++)
+        {
+            answer++;
+        }
+        // big + small > x
+        // big < x < big + small
+        for (int i = big + 1; i < big + small; i++)
+        {
+            answer++;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 삼각형의 완성조건(1)
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Solution0220(int[] sides)
+    {
+        // 리스트로 변환
+        var list = new List<int>(sides);
+        // 정렬
+        list.Sort();
+        // 가장 큰 값과 나머지 값들의 합과 비교
+        if (list[2] < list[0] + list[1])
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
+
+    /// <summary>
     /// 최댓값 만들기(2)
     /// </summary>
     /// <param name="numbers"></param>
