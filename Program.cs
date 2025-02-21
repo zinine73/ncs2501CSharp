@@ -5,11 +5,13 @@
         Solution sol = new Solution();
         string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
-        int[] intarray = new int[]{11,7};
+        int[] intarray = new int[]{11,7,4};
         string str = "78720646226947352489";
-        Console.WriteLine(sol.Solution0221(str));
+        //Console.WriteLine(sol.Solution0221(str));
         //Util.PrintStringArray(sol.Solution0218(s1));
-
+        Util.PrintArray<int>(intarray);
+        Util.PrintArray<string>(s1);
+        
         //Sample sam = new Sample();
         //sam.PreProcess();
     }
