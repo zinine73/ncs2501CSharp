@@ -4,6 +4,25 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 9로 나눈 나머지
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
+    public int Solution0221(string number)
+    {
+        int answer = 0;
+        // string은 char형의 배열
+        // 배열의 각 값을 다 돈다
+        foreach (var item in number)
+        {
+            // item 의 integer 값을 더해준다
+            answer += (item - '0');
+        }
+        // 9로 나눈 나머지를 구한다
+        return answer % 9;
+    }
+
+    /// <summary>
     /// 삼각형의 완성조건(2)
     /// </summary>
     /// <param name="sides"></param>

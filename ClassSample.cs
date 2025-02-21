@@ -1,3 +1,21 @@
+// interface
+public interface IComparable
+{
+    int CompareTo(object obj);
+}
+
+public class MyClass2 : IComparable
+{
+    private int key;
+    private int value;
+
+    public int CompareTo(Object obj)
+    {
+        MyClass2 target = (MyClass2)obj;
+        return this.key.CompareTo(target.key);
+    }
+}
+
 // Base class
 public class Animal
 {
