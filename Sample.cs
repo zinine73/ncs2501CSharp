@@ -12,6 +12,30 @@ using System.Diagnostics;
 
 class Sample
 {
+    // delegate 정의
+    delegate int MyDelegate(string s);
+
+    public void Test()
+    {
+        // delegate 개체 생성
+        MyDelegate m = new MyDelegate(StringToInt);
+        // delegate 객체를 메서드로 전달
+        Run(m);
+    }
+
+    // 대상 메서드
+    int StringToInt(string s)
+    {
+        return int.Parse(s);
+    }
+
+    // 전달받는 메서드
+    void Run(MyDelegate method)
+    {
+        int i = method("123");
+        Console.WriteLine(i);
+    }
+
     #region Public
     public int abc;
     public float cde;

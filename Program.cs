@@ -8,12 +8,12 @@
         int[] intarray = new int[]{11,7,4};
         string str = "78720646226947352489";
         //Console.WriteLine(sol.Solution0221(str));
-        //Util.PrintStringArray(sol.Solution0218(s1));
-        Util.PrintArray<int>(intarray);
-        Util.PrintArray<string>(s1);
+        //Util.PrintIntArray(sol.Solution0224(24));
+        Util.PrintArray<int>(sol.Solution0224(29));
+        //Util.PrintArray<string>(s1);
         
         //Sample sam = new Sample();
-        //sam.PreProcess();
+        //sam.Test();
     }
 
     private void ClassTest()

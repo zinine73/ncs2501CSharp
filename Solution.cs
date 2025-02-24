@@ -4,6 +4,29 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 약수 구하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0224(int n)
+    {
+        // list를 하나 준비
+        var list = new List<int>();
+        // 1부터 n까지 반복
+        for (int i = 1; i <= n; i++)
+        {
+            // n이 인덱스 값으로 나누어 떨어지면
+            if (n % i == 0)
+            {
+                // 그게 약수니까 list에 넣는다
+                list.Add(i);
+            }
+        }
+        // list를 배열형으로 바꿔서 리턴한다
+        return list.ToArray();
+    }
+
+    /// <summary>
     /// 9로 나눈 나머지
     /// </summary>
     /// <param name="number"></param>
