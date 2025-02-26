@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿using MySystem;
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -9,11 +10,13 @@
         string str = "78720646226947352489";
         //Console.WriteLine(sol.Solution0221(str));
         //Util.PrintIntArray(sol.Solution0224(24));
-        Util.PrintArray<int>(sol.Solution0224(29));
+        //Util.PrintArray<int>(sol.Solution0224(29));
         //Util.PrintArray<string>(s1);
         
         //Sample sam = new Sample();
         //sam.Test();
+        DelProgram delp = new DelProgram();
+        delp.Run();
     }
 
     private void ClassTest()
