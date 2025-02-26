@@ -4,6 +4,35 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 간단한 식 계산하기
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    public int Solution0226(string str)
+    {
+        int answer = 0;
+        // str을 분리
+        string[] sa = str.Split(' ');
+        // 각 숫자를 int로 변환
+        int a = Convert.ToInt32(sa[0]);
+        int b = Int32.Parse(sa[2]);
+        // 각 수식에 맞게 분기, 계산
+        switch (sa[1])
+        {
+            case "+":
+                answer = a + b;
+                break;
+            case "-":
+                answer = a - b;
+                break;
+            case "*":
+                answer = a * b;
+                break;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 약수 구하기
     /// </summary>
     /// <param name="n"></param>

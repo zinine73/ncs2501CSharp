@@ -7,16 +7,14 @@ internal class Program
         string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{11,7,4};
-        string str = "78720646226947352489";
-        //Console.WriteLine(sol.Solution0221(str));
+        string str = "40000 * 40000";
+        Console.WriteLine(sol.Solution0226(str));
         //Util.PrintIntArray(sol.Solution0224(24));
         //Util.PrintArray<int>(sol.Solution0224(29));
         //Util.PrintArray<string>(s1);
         
         //Sample sam = new Sample();
         //sam.Test();
-        DelProgram delp = new DelProgram();
-        delp.Run();
     }
 
     private void ClassTest()
