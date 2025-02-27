@@ -4,6 +4,30 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 369게임
+    /// </summary>
+    /// <param name="order"></param>
+    /// <returns></returns>
+    public int Solution0227(int order)
+    {
+        int answer = 0;
+        // order를 string으로 변환
+        string str = order.ToString();
+        // string의 각 item을 반복
+        foreach (var item in str)
+        {
+            // item이 3,6,9 일때만 answer++
+            if (item.Equals('3') || 
+                item.Equals('6') || 
+                item.Equals('9'))
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 간단한 식 계산하기
     /// </summary>
     /// <param name="str"></param>

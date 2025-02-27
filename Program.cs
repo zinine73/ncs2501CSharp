@@ -8,7 +8,7 @@ internal class Program
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{11,7,4};
         string str = "40000 * 40000";
-        Console.WriteLine(sol.Solution0226(str));
+        Console.WriteLine(sol.Solution0227(29423));
         //Util.PrintIntArray(sol.Solution0224(24));
         //Util.PrintArray<int>(sol.Solution0224(29));
         //Util.PrintArray<string>(s1);
