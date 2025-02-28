@@ -6,12 +6,10 @@ internal class Program
         Solution sol = new Solution();
         string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
-        int[] intarray = new int[]{11,7,4};
+        int[] intarray = new int[]{9,10,11,8};
         string str = "40000 * 40000";
-        Console.WriteLine(sol.Solution0227(29423));
-        //Util.PrintIntArray(sol.Solution0224(24));
-        //Util.PrintArray<int>(sol.Solution0224(29));
-        //Util.PrintArray<string>(s1);
+        //Console.WriteLine(sol.Solution0228(intarray, 4));
+        Util.PrintArray<int>(sol.Solution02282(intarray));
         
         //Sample sam = new Sample();
         //sam.Test();

@@ -4,6 +4,58 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 가장 큰 수 찾기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int[] Solution02282(int[] array)
+    {
+        int[] answer = new int[2];
+        // dictionary 정의
+        //Dictionary<int, int> dic = new Dictionary<int, int>();
+        var dic = new Dictionary<int, int>();
+        // dic에 array값 넣기
+        int idx = 0;
+        foreach (var item in array)
+        {
+            dic.Add(item, idx);
+            idx++;
+        }
+        // 제일 큰 수 찾기 => list를 이용
+        List<int> list = array.ToList();
+        // list.Sort를 이용
+        list.Sort();
+        // 리턴배열에 넣기
+        answer[0] = list[array.Length - 1]; // list[list.Count - 1]
+        answer[1] = dic[answer[0]];
+        return answer;
+    }
+
+    /// <summary>
+    /// 가까운 1 찾기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="idx"></param>
+    /// <returns></returns>
+    public int Solution0228(int[] arr, int idx)
+    {
+        // 특정 조건에 따른 반환값이 정해져 있다면, 그 값을 기본값으로 한다
+        int answer = -1;
+        // idx부터 arr의 크기만큼 반복
+        for (int i = idx; i < arr.Length; i++)
+        {
+            // 1을 찾으면
+            if (arr[i] == 1)
+            {
+                // answer에 인덱스 값을 넣고 break
+                answer = i;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 369게임
     /// </summary>
     /// <param name="order"></param>
