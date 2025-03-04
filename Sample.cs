@@ -9,9 +9,38 @@ using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 
 class Sample
 {
+    // lambda 
+    public void lambdaSample()
+    {
+        //string str;
+        //(str) => { Console.WriteLine(str); } ;
+        //(p) => Write(p);
+        //(string s, int e) => { Console.WriteLine(s); Console.WriteLine(e); }
+
+        //this.button1.Click += new System.EventHandler(button1_Click);
+        //this.button1.Click += button1_Click;
+        //this.button1.Click += delegate(object sender, EventArgs e)
+        //{
+        //    ((Button)sender).BackColor = Color.Red;
+        //};
+        //this.button1.Click += (sender, e) => ((Button)sender).BackColor = Color.Red;
+    }
+
+    //private void button1_Click(object sender, EventArgs e)
+    //{
+    //    ((Button)sender).BackColor = Color.Red;
+    //}
+
+    private void Write(string s, int e)
+    {
+        Console.WriteLine(s);
+        Console.WriteLine(e);
+    }
+
     // delegate 정의
     delegate int MyDelegate(string s);
 

@@ -4,6 +4,29 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 외계행성의 나이
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns></returns>
+    public string Solution0304(int age)
+    {
+        string answer = string.Empty;
+        // age가 0보다 크면 반복
+        while (age > 0)
+        {
+            // age의 1의 자리 숫자 추출
+            int val = age % 10;
+            // 숫자에 해당하는 값의 캐릭터형 변환
+            char chr = Convert.ToChar(val + 'a');
+            // answer의 앞에 추가
+            answer = chr + answer;
+            // age 자리수 변환
+            age /= 10;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 가장 큰 수 찾기
     /// </summary>
     /// <param name="array"></param>

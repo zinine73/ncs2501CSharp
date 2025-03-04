@@ -8,8 +8,8 @@ internal class Program
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{9,10,11,8};
         string str = "40000 * 40000";
-        //Console.WriteLine(sol.Solution0228(intarray, 4));
-        Util.PrintArray<int>(sol.Solution02282(intarray));
+        Console.WriteLine(sol.Solution0304(100));
+        //Util.PrintArray<int>(sol.Solution02282(intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
