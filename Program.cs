@@ -7,8 +7,8 @@ internal class Program
         string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         string[] s2 = new string[]{"m","dot"};
         int[] intarray = new int[]{9,10,11,8};
-        string str = "40000 * 40000";
-        Console.WriteLine(sol.Solution0304(100));
+        string str = "I love you";
+        Console.WriteLine(sol.Solution0305(str,3,6));
         //Util.PrintArray<int>(sol.Solution02282(intarray));
         
         //Sample sam = new Sample();

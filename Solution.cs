@@ -4,6 +4,44 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 인덱스 바꾸기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public string Solution0305(string my_string, int num1, int num2)
+    {
+        string answer = string.Empty;
+        // num1, num2에 해당하는 char를 얻어온다
+        char chr1 = my_string[num1];
+        char chr2 = my_string[num2];
+        // for문으로 돌면서
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            // num1과 같으면
+            if (i == num1)
+            {
+                // num2를 넣고
+                answer += chr2;
+            }
+            // num2와 같으면
+            else if (i == num2)
+            {
+                // num1을 넣고
+                answer += chr1;
+            }
+            // 아니면
+            else
+            {
+                // 원래 char를 넣고
+                answer += my_string[i];
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 외계행성의 나이
     /// </summary>
     /// <param name="age"></param>
