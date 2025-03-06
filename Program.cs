@@ -4,15 +4,25 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
+        string[] s1 = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         string[] s2 = new string[]{"m","dot"};
+        bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{9,10,11,8};
         string str = "I love you";
-        Console.WriteLine(sol.Solution0305(str,3,6));
-        //Util.PrintArray<int>(sol.Solution02282(intarray));
+        //Console.WriteLine(sol.Solution0305(str,3,6));
+        Util.PrintArray(sol.Solution0306(s1, b1));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    void ExtendTest()
+    {
+        string s = "This is a Test";
+        string s22 = s.ToChangeCase();
+        bool found = s.Found('a');
+        //bool found = MySystem.ExClass.Found(s, 'a');
+        Console.WriteLine($"s22:{s22}, found:{found}");
     }
 
     private void ClassTest()

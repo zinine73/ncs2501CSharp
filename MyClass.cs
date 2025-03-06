@@ -1,8 +1,42 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 
 namespace MySystem
 {
+    // static class
+    public static class ExClass
+    {
+        // static 확장 메서드
+        public static string ToChangeCase(this String str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var ch in str)
+            {
+                if (ch >= 'A' && ch <= 'Z')
+                    sb.Append((char)('a' + ch - 'A'));
+                else if (ch >= 'a' && ch <= 'z')
+                    sb.Append((char)('A' + ch - 'a'));
+                else
+                    sb.Append(ch);
+            }
+            return sb.ToString();
+        }
+
+        // 이 확장메서드는 파라미터 ch가 필요함
+        /// <summary>
+        /// 확장 메서드
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="ch"></param>
+        /// <returns></returns>
+        public static bool Found(this String str, char ch)
+        {
+            int position = str.IndexOf(ch);
+            return position >= 0;
+        }
+    }
+
     class MySort
     {
         public delegate int CompareDelegate(int i1, int i2);

@@ -3,6 +3,39 @@ using System.Text;
 
 class Solution
 {
+    public string[] Solution0306(string[] todo_list, bool[] finished)
+    {
+        // answer 배열의 크기를 구한다
+        int len = 0;
+        // foreach로 finished를 돌면서
+        foreach (var item in finished)
+        {
+            // 못한 일이 있으면 크기 증가
+            if (item == false)
+            {
+                len++;
+            }
+        }
+        // 구해진 크기만큼의 answer를 생성한다
+        string[] answer = new string[len];
+        // answer에 사용할 인덱스 변수 하나 생성
+        int ai = 0;
+        // for문으로 돌면서
+        for (int i = 0; i < finished.Length; i++)
+        {
+            // 할일을 못했으면
+            if (finished[i] == false)
+            {
+                // answer에 todo_list에서의 인덱스 값 추가
+                answer[ai] = todo_list[i];
+                // answer에서 사용하는 인덱스 값 증가
+                ai++;
+            }
+        }
+        // answer 리턴
+        return answer;
+    }
+
     /// <summary>
     /// 인덱스 바꾸기
     /// </summary>
