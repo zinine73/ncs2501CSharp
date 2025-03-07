@@ -8,9 +8,10 @@ internal class Program
         string[] s2 = new string[]{"m","dot"};
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{9,10,11,8};
+        int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "I love you";
-        //Console.WriteLine(sol.Solution0305(str,3,6));
-        Util.PrintArray(sol.Solution0306(s1, b1));
+        Console.WriteLine(sol.Solution03072(69.32));
+        //Util.PrintArray(sol.Solution0306(s1, b1));
         
         //Sample sam = new Sample();
         //sam.Test();

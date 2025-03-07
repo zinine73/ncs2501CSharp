@@ -3,6 +3,57 @@ using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 정수 부분
+    /// </summary>
+    /// <param name="flo"></param>
+    /// <returns></returns>
+    public int Solution03072(double flo)
+    {
+        int answer = 0;
+        // 간단한 방법
+        //answer = (int)(flo / 1);
+        //answer = (int)flo;
+        // 조금 복잡한 방법
+        string str = flo.ToString();
+        string[] strarr = str.Split(".");
+        answer = Convert.ToInt32(strarr[0]);
+        //answer = Convert.ToInt32(flo.ToString().Split(".")[0]);
+        return answer;
+    }
+
+    /// <summary>
+    /// 이차원 배열 대각선 순회하기
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution0307(int[,] board, int k)
+    {
+        int answer = 0;
+        // i의 크기만큼 반복
+        for (int i = 0; i < board.GetLength(0); i++)
+        {
+            // j의 크기만큼 반복
+            for (int j = 0; j < board.GetLength(1); j++)
+            {
+                // 주어진 식을 만족하는 지
+                if (i + j <= k)
+                {
+                    // 만족하면 총합에 추가
+                    answer += board[i,j];
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 할 일 목록
+    /// </summary>
+    /// <param name="todo_list"></param>
+    /// <param name="finished"></param>
+    /// <returns></returns>
     public string[] Solution0306(string[] todo_list, bool[] finished)
     {
         // answer 배열의 크기를 구한다
