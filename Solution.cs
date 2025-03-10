@@ -4,6 +4,25 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 피자 나눠 먹기(2) - 최소공배수 구하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0310(int n)
+    {
+        int answer = 0;
+        // 조건을 만족하면 계속 반복
+        do
+        {
+            // 피자 판 수 + 1
+            answer++;
+            // n, 6의 최소 공배수
+            // 피자조각수를 n으로 나눠서 나머지가 0 인지
+        } while (answer * 6 % n != 0);
+        return answer;
+    }
+
+    /// <summary>
     /// 정수 부분
     /// </summary>
     /// <param name="flo"></param>

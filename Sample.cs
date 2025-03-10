@@ -11,6 +11,31 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 
+public partial class Class2
+{
+    public void Run()
+    {
+        DoThis();
+    }
+
+    partial void DoThis();
+} 
+
+partial class Class1
+{
+    public void Run() {}
+}
+
+partial struct Struct1
+{
+    public int ID;
+}
+
+partial interface IDoable
+{
+    string Name {get; set;}
+}
+
 class Sample
 {
     // lambda 

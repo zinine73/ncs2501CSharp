@@ -4,6 +4,13 @@ using System.Text;
 
 namespace MySystem
 {
+    public class DoClass : IDoable
+    {
+        public string Name { get; set;}
+        public void Do()
+        {}
+    }
+
     // static class
     public static class ExClass
     {

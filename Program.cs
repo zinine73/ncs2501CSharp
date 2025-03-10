@@ -1,4 +1,5 @@
-﻿using MySystem;
+﻿using System.Security.Cryptography.X509Certificates;
+using MySystem;
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,11 +11,22 @@ internal class Program
         int[] intarray = new int[]{9,10,11,8};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "I love you";
-        Console.WriteLine(sol.Solution03072(69.32));
+        Console.WriteLine(sol.Solution0310(4));
         //Util.PrintArray(sol.Solution0306(s1, b1));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void PartialTest()
+    {
+        Class1 newClass = new Class1();
+        newClass.Get();
+        newClass.Put();
+        newClass.Run();
+
+        Class2 ccc = new Class2();
+        ccc.Run();
     }
 
     void ExtendTest()
