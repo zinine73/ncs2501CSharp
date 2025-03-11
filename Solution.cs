@@ -4,6 +4,27 @@ using System.Text;
 class Solution
 {
     /// <summary>
+    /// 중복된 문자 제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0311(string my_string)
+    {
+        string answer = string.Empty;
+        // my_string을 한글자씩 돈다
+        foreach (var item in my_string)
+        {
+            // item이 answer에 없으면
+            if (!answer.Contains(item))
+            {
+                // answer에 item 추가
+                answer += item;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 피자 나눠 먹기(2) - 최소공배수 구하기
     /// </summary>
     /// <param name="n"></param>
