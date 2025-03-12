@@ -3,6 +3,25 @@ using System.Text;
 
 class Solution
 {
+    public int[] Solution0312(int[] emergency)
+    {
+        // 반환값의 크기를 알 수 있으니 그 크기만큼의 answer를 생성
+        int[] answer = new int[emergency.Length];
+        // 정렬을 사용해야 하므로, List 하나를 생성
+        var list = new List<int>(emergency);
+        // 정렬 (기본값 : 오름차순)
+        list.Sort();
+        // 정렬순서 바꾸기 (내림차순)
+        list.Reverse();
+        // 전체 크기만큼 반복
+        for (int i = 0; i < answer.Length; i++)
+        {
+            // answer의 해당 인덱스에, emergency에서의 인덱스 값(+1)을 넣는다
+            answer[i] = list.IndexOf(emergency[i]) + 1;
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 중복된 문자 제거
     /// </summary>

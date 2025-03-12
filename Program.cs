@@ -8,11 +8,11 @@ internal class Program
         string[] s1 = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         string[] s2 = new string[]{"m","dot"};
         bool[] b1 = new bool[]{true,false,true,false};
-        int[] intarray = new int[]{9,10,11,8};
+        int[] intarray = new int[]{30, 10, 23, 6, 100};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "We are the world";
-        Console.WriteLine(sol.Solution0311(str));
-        //Util.PrintArray(sol.Solution0306(s1, b1));
+        //Console.WriteLine(sol.Solution0311(str));
+        Util.PrintArray(sol.Solution0312(intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
