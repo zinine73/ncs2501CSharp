@@ -3,6 +3,81 @@ using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 숨어있는 숫자의 덧셈 (2)
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution03132(string my_string)
+    {
+        int answer = 0;
+        // 이전 item이 숫자인가 아닌가를 나타내는 bool 변수
+        bool isNumber = false;
+        // 계산된 수의 값 저장할 변수
+        int val = 0;
+        // my_string을 순회
+        foreach (var item in my_string)
+        {
+            // 숫자만 검색
+            // 자연수가 아니라고 비교조건에서 '0'을 빼게되면 
+            // '10'같은걸 처리할 수 없으므로 주의!!!
+            if ((item >= '0') && (item <= '9'))
+            {
+                // 이전 item이 숫자였냐?
+                if (isNumber)
+                {
+                    // 숫자이면, 연속된 수로 계산
+                    val = val * 10 + (item - '0');
+                }
+                else 
+                {
+                    // 아니면 계산된 수의 값을 구하고
+                    val = (item - '0');
+                    // 이전 item이 숫자였다고 표시
+                    isNumber = true;
+                }
+            } 
+            else // 숫자가 아니면
+            {
+                // 이전 item은 숫자가 아니었다고 표시
+                isNumber = false;
+                // answer에 계산된 수의 값을 더하고
+                answer += val;
+                // 계산된 수의 값은 초기화
+                val = 0;
+            }
+        }
+        // answer에 계산된 수의 값을 더하기
+        answer += val;
+        return answer;
+    }
+
+    /// <summary>
+    /// 숨어있는 숫자의 덧셈 (1)
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution0313(string my_string)
+    {
+        int answer = 0;
+        // my_string 하나씩 돌자
+        foreach (var item in my_string)
+        {
+            // 얻어온 item이, '1'과 '9' 사이에 있다면
+            if ((item >= '1') && (item <= '9'))
+            {
+                // answer에 그 값을 더한다
+                answer += (item - '0');
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 진료순서 정하기
+    /// </summary>
+    /// <param name="emergency"></param>
+    /// <returns></returns>
     public int[] Solution0312(int[] emergency)
     {
         // 반환값의 크기를 알 수 있으니 그 크기만큼의 answer를 생성

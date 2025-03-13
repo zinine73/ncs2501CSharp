@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using MySystem;
+﻿using MySystem;
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,12 +9,36 @@ internal class Program
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{30, 10, 23, 6, 100};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
-        string str = "We are the world";
-        //Console.WriteLine(sol.Solution0311(str));
-        Util.PrintArray(sol.Solution0312(intarray));
+        string str = "1a2b3c4d123Z";
+        Console.WriteLine(sol.Solution03132(str));
+        //Util.PrintArray(sol.Solution0312(intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private static void FormatString()
+    {
+        int a = 12345678;
+        double b = 12.345678;
+
+        Console.WriteLine($"통화 (C) . . . : {a:C}");
+        Console.WriteLine($"10진법 (D) . . : {a:D}");
+        Console.WriteLine($"지수표기법 (E) : {b:E}");
+        Console.WriteLine($"고정소수점 (F) : {b:F}");
+        Console.WriteLine($"일반 (G) . . . : {a:G}");
+        Console.WriteLine($"숫자 (N) . . . : {a:N}");
+        Console.WriteLine($"16진법 (X) . . : {a:X}");
+        Console.WriteLine($"백분율 (P) . . : {b:P}");
+        Console.WriteLine("----------------------");
+        a = 1234;
+        b = 12.345678;
+        Console.WriteLine($"0 자리 표시 (0) . . . . : {a:00000}");
+        Console.WriteLine($"10진수자리 표시 (#) . . : {a:#####}");
+        Console.WriteLine($"소수점 (.) . . . . . . .: {b:0.00000}");
+        Console.WriteLine($"천단위자릿수 표시(,) . . : {a:0,0}");
+        Console.WriteLine($"백분율 자리 표시 (%) . . : {b:0%}");
+        Console.WriteLine($"지수표기법 (e) . . . . . : {b:0.000e+0}");
     }
 
     private void PartialTest()
