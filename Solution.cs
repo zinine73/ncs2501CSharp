@@ -1,5 +1,7 @@
 using System.Formats.Asn1;
+using System.IO.Compression;
 using System.Text;
+using System.Text.RegularExpressions;
 
 class Solution
 {
@@ -11,6 +13,7 @@ class Solution
     public int Solution03132(string my_string)
     {
         int answer = 0;
+        /*
         // 이전 item이 숫자인가 아닌가를 나타내는 bool 변수
         bool isNumber = false;
         // 계산된 수의 값 저장할 변수
@@ -49,6 +52,19 @@ class Solution
         }
         // answer에 계산된 수의 값을 더하기
         answer += val;
+        return answer;
+        */
+        // 다른 방법
+        string str = Regex.Replace(my_string, "[a-zA-Z]", " ");
+        string[] str2 = str.Split(' ');
+        foreach (var item in str2)
+        {
+            // "" 같은 경우 에러나므로 걸러주자
+            if (item.Length > 0)
+            {
+                answer += Convert.ToInt32(item);
+            }
+        }
         return answer;
     }
 
