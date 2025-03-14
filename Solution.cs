@@ -23,9 +23,10 @@ class Solution
             if (dic.TryGetValue(item, out int val))
             {
                 // 있으면 value를 증가
-                val++;
-                dic.Remove(item);
-                dic.Add(item, val);
+                //val++;
+                //dic.Remove(item);
+                //dic.Add(item, val);
+                dic[item]++;
             }
             else
             {
