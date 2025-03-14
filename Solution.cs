@@ -1,10 +1,68 @@
 using System.Formats.Asn1;
 using System.IO.Compression;
 using System.Text;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 class Solution
 {
+    /// <summary>
+    /// 한 번만 등장한 문자
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public string Solution0314(string s)
+    {
+        string answer = string.Empty;
+        // Dictionary 사용 방법 ////////////////////////////////
+        var dic = new Dictionary<char, int>();
+        // s를 돌면서
+        foreach (var item in s)
+        {
+            // char item 을 키로 검사해서
+            if (dic.TryGetValue(item, out int val))
+            {
+                // 있으면 value를 증가
+                val++;
+                dic.Remove(item);
+                dic.Add(item, val);
+            }
+            else
+            {
+                // 없으면 새로 넣고
+                dic.Add(item, 1);
+            }   
+        }
+        var list = new List<char>();
+        // dic를 돌면서
+        foreach (var item in dic)
+        {
+            // value가 1인 item만 list에 넣고
+            if (item.Value == 1)
+            {
+                list.Add(item.Key);
+            }
+        }
+        // list를 정렬
+        list.Sort();
+        // string으로 변환
+        foreach (var item in list)
+        {
+            answer += item;
+        }
+        answer = string.Empty;
+        // Split 사용방법 ///////////////////////////////////
+        // Split해서 나온 결과배열이 크기가 2라면, 나누는 기준이 하나
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            if (s.Split(c).Length == 2)
+            {
+                answer += c;
+            }
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 숨어있는 숫자의 덧셈 (2)
     /// </summary>

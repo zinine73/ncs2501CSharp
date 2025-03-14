@@ -9,12 +9,37 @@ internal class Program
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{30, 10, 23, 6, 100};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
-        string str = "1a2b3c4d123Z";
-        Console.WriteLine(sol.Solution03132(str));
+        string str = "abcabcadc";
+        Console.WriteLine(sol.Solution0314(str));
         //Util.PrintArray(sol.Solution0312(intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void OperatorSample()
+    {
+        int a = 1;
+        Console.WriteLine(++a);
+        Console.WriteLine(a++);
+        Console.WriteLine(--a);
+        Console.WriteLine(a--);
+        Console.WriteLine(a);
+
+        a = 3;
+        int b = 5;
+        Console.WriteLine(a++ + b); // 8, a=4, b=5
+        Console.WriteLine(a++ + --b); // 8, a=5, b=4
+        Console.WriteLine(++a + a++); // 12, a=7, b=4
+        Console.WriteLine($"a={a}, b={b}");
+
+        Console.WriteLine((a > 4) && (b > 50));
+
+        a = 13;
+        b = 10;
+        Console.WriteLine(a & b);
+        Console.WriteLine(a | b);
+        Console.WriteLine(a ^ b);
     }
 
     private static void FormatString()
