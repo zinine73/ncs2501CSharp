@@ -9,9 +9,9 @@ internal class Program
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{30, 10, 23, 6, 100};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
-        string str = "abcabcadc";
-        Console.WriteLine(sol.Solution0314(str));
-        //Util.PrintArray(sol.Solution0312(intarray));
+        string str = "abcdef123";
+        //Console.WriteLine(sol.Solution0314(str));
+        Util.PrintArray(sol.Solution0317(str, 3));
         
         //Sample sam = new Sample();
         //sam.Test();

@@ -3,9 +3,42 @@ using System.IO.Compression;
 using System.Text;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Data.Common;
 
 class Solution
 {
+    /// <summary>
+    /// 잘라서 배열로 저장하기
+    /// </summary>
+    /// <param name="my_str"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string[] Solution0317(string my_str, int n)
+    {
+        // 크기를 알 수 있으면, 그 크기만큼 리턴 배열을 만든다
+        // n보다 작은 값들이 남는 경우 크기에 1을 더한다
+        //int len = my_str.Length / n;
+        //if (my_str.Length % n > 0) len++;
+        int len = (my_str.Length - 1) / n + 1;
+        string[] answer = new string[len];
+        // 필요한 인덱스, 카운터 정의
+        int idx = 0, cnt = 0;
+        // my_str을 순회하면서
+        foreach (var item in my_str)
+        {
+            // answer에 하나씩 넣기
+            answer[idx] += item;
+            cnt++;
+            // n만큼 넣었으면 idx 증가
+            if (cnt == n)
+            {
+                idx++;
+                cnt = 0;
+            }
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 한 번만 등장한 문자
     /// </summary>
