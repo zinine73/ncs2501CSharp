@@ -7,14 +7,27 @@ internal class Program
         string[] s1 = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         string[] s2 = new string[]{"m","dot"};
         bool[] b1 = new bool[]{true,false,true,false};
-        int[] intarray = new int[]{30, 10, 23, 6, 100};
+        int[] intarray = new int[]{7,77,17};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "abcdef123";
-        //Console.WriteLine(sol.Solution0314(str));
-        Util.PrintArray(sol.Solution0317(str, 3));
+        Console.WriteLine(sol.Solution0318(intarray));
+        //Util.PrintArray(sol.Solution0317(str, 3));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void InfiniteLoop()
+    {
+        int sum = 0;
+        while (true)
+        {
+            Console.Write("수를 입력하세요: ");
+            string line = Console.ReadLine();
+            if (line == "end") break;
+            sum += int.Parse(line);
+        }
+        Console.WriteLine($"지금까지 입력된 수를 모두 더하면 : {sum}");
     }
 
     private void OperatorSample()

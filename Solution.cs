@@ -8,6 +8,41 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 7의 개수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution0318(int[] array)
+    {
+        int answer = 0;
+        // 배열의 모든 요소를 하나의 문자열로 만든다
+        // StringBuilder를 사용하자
+        var sb = new StringBuilder();
+        foreach (var item in array)
+        {
+            sb.Append(item);
+        }
+        string str = sb.ToString();
+        // 문자열을 순회하면서 7과 비교하자
+        // 1. foreach 사용
+        /*
+        foreach (var item in str)
+        {
+            if (item == '7')
+            {
+                answer++;
+            }
+        }
+        */
+        // 2. Regex 사용
+        // Count는 8.0부터 지원
+        //answer = Regex.Count(str, "7");
+        str = Regex.Replace(str, "[1-6890]", "");
+        answer = str.Length;
+        return answer;
+    }
+
+    /// <summary>
     /// 잘라서 배열로 저장하기
     /// </summary>
     /// <param name="my_str"></param>
