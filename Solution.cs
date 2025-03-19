@@ -8,6 +8,33 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 커피 심부름
+    /// </summary>
+    /// <param name="order"></param>
+    /// <returns></returns>
+    public int Solution0319(string[] order)
+    {
+        int answer = 0;
+        // order을 순회하면서
+        foreach (var item in order)
+        {
+            // 특정단어가 포함되었냐 체크
+            /*
+            if (item.Contains("cafelatte"))
+            {
+                answer += 5000;
+            }
+            else
+            {
+                answer += 4500;
+            }
+            */
+            answer += item.Contains("cafelatte") ? 5000 : 4500;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 7의 개수
     /// </summary>
     /// <param name="array"></param>

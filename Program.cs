@@ -4,17 +4,69 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
+        string[] s1 = new string[]{"americanoice", "americano", "iceamericano"};
         string[] s2 = new string[]{"m","dot"};
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{7,77,17};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "abcdef123";
-        Console.WriteLine(sol.Solution0318(intarray));
+        Console.WriteLine(sol.Solution0319(s1));
         //Util.PrintArray(sol.Solution0317(str, 3));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void MethodTest()
+    {
+        int a = 40;
+        int b = 10;
+        Console.WriteLine($"Swap before : a={a}, b={b}");
+        Swap(ref a, ref b);
+        Console.WriteLine($"Swap after : a={a}, b={b}");
+
+        int sum = Add(a, b);
+        int aa;
+        Add2(out aa);
+
+        int[] intarray = new int[]{7,77,17};
+        Console.WriteLine(total(intarray));
+        Console.WriteLine(total(7, 77, 17));
+        sum = total(1,2,3,4,56,7,8);
+    }
+
+    static int total(params int[] list)
+    {
+        int sum = 0;
+        for (int i = 0; i < list.Length; i++)
+        {
+            sum += list[i];
+        }
+        return sum;
+    }
+    static void Add2(out int a)
+    {
+        a = 100;
+    }
+
+    static int Add(int a, int b)
+    {
+        return a+b;
+    }
+    static int Add(double a, double b)
+    {
+        return (int)(a+b);
+    }
+    static int Add(int a, int b, int c)
+    {
+        return a+b+c;
+    }
+
+    static void Swap(ref int a, ref int b)
+    {
+        int temp = b;
+        b = a;
+        a = temp;
     }
 
     private void InfiniteLoop()
