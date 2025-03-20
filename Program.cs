@@ -9,8 +9,8 @@ internal class Program
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{7,77,17};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
-        string str = "abcdef123";
-        Console.WriteLine(sol.Solution0319(s1));
+        string str = "3 + 4 - 1";
+        Console.WriteLine(sol.Solution0320(str));
         //Util.PrintArray(sol.Solution0317(str, 3));
         
         //Sample sam = new Sample();
