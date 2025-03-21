@@ -4,6 +4,33 @@ using System.Text;
 
 namespace MySystem
 {
+    class A
+    {
+        protected bool VIP;
+        protected int x = 123;
+        void sample()
+        {
+            x = x+1;
+        }
+    }
+
+    class B : A
+    {
+        static void samples()
+        {
+            A a = new A();
+            B b = new B();
+
+            //a.x = 10;
+            //a.VIP = true;
+            b.x = 10;
+            if (b.VIP == true)
+            {
+                //
+            }
+        }
+    }
+
     public class DoClass : IDoable
     {
         public string Name { get; set;}

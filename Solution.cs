@@ -8,6 +8,59 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 두 수의 합
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public string Solution0321(string a, string b)
+    {
+        // string의 계산에는 StringBuilder를 사용한다
+        var sb = new StringBuilder();
+        // a,b 중에 더 긴 수를 찾고 그 길이를 구한다
+        int len = Math.Max(a.Length, b.Length);
+        // 더해서 10이 넘어가는 경우 다음 계산에 더해줄 변수
+        int over = 0;
+        // 구한 길이만큼 반복
+        for (int i = 0; i < len; i++)
+        {
+            // a에서 뒤에서부터 인덱스에 해당하는 값
+            int va = 0;
+            if (a.Length > i)
+            {
+                va = a[a.Length - 1 - i] - '0';
+            }
+            // b에서 뒤에서부터 인덱스에 해당하는 값
+            int vb = 0;
+            if (b.Length > i)
+            {
+                vb = b[b.Length - 1 - i] - '0';
+            }
+            // a + b
+            int vc = va + vb + over;
+            // 10을 넘으면
+            if (vc >= 10)
+            {
+                over = 1;
+                vc -= 10;
+            }
+            else
+            {
+                over = 0;
+            }
+            // 결과값을 리턴값 맨 앞에 삽입
+            sb.Insert(0, vc);
+        }
+        // 넘는값이 0이 아니면 삽입
+        if (over > 0)
+        {
+            sb.Insert(0, 1);
+        }
+        // string으로 변환해서 리턴
+        return sb.ToString();
+    }
+
+    /// <summary>
     /// 문자열 계산하기
     /// </summary>
     /// <param name="my_string"></param>
