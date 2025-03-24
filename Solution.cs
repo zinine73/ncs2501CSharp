@@ -8,6 +8,48 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 캐릭터의 좌표
+    /// </summary>
+    /// <param name="keyinput"></param>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    public int[] Solution0324(string[] keyinput, int[] board)
+    {
+        int[] answer = new int[2];
+        // 필요한 변수들 선언
+        int x = 0, y = 0;
+        int bxr = (board[0] - 1) / 2;
+        int bxl = -1 * bxr;
+        int byu = (board[1] - 1) / 2;
+        int byd = -1 * byu;
+        // keyinput을 순회하면서
+        foreach (var item in keyinput)
+        {
+            // 각 방향에 따른 값 계산 (범위를 넘지 않는지 검사)
+            if (item.Equals("left"))
+            {
+                if (x > bxl) x -= 1;
+            }
+            else if (item.Equals("right"))
+            {
+                if (x < bxr) x += 1;
+            }
+            else if (item.Equals("down"))
+            {
+                if (y > byd) y -= 1;
+            }
+            else 
+            {
+                if (y < byu) y += 1;
+            }
+        }
+        // answer에 넣기
+        answer[0] = x;
+        answer[1] = y;
+        return answer;
+    }
+
+    /// <summary>
     /// 두 수의 합
     /// </summary>
     /// <param name="a"></param>
