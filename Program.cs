@@ -18,6 +18,22 @@ internal class Program
         //sam.Test();
     }
 
+    private void Constructor()
+    {
+        Person p1 = new Person();
+        Person p2 = new Person("Lee");
+
+        //Foo foo1 = new Foo() { name = "foo", value = 3 };
+        Foo foo1 = new Foo { name = "foo", value = 3 };
+        Foo foo2 = new Foo("foo") { value = 3 };
+
+        Foo foo3 = new Foo();
+        foo3.name = "foo";
+        foo3.value = 3;
+        Foo foo4 = new Foo("foo");
+        foo4.value = 3;
+    }
+
     private void MethodTest()
     {
         int a = 40;
