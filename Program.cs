@@ -4,18 +4,30 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = new string[]{"down", "down", "down", "down", "down"};
-        string[] s2 = new string[]{"m","dot"};
+        string[] s1 = ["rabbit04", "98761"];
+        string[,] s2 = new string[,]{{"jaja11", "98761"}, {"krong0313", "29440"}, {"rabbit00", "111333"}};
         bool[] b1 = new bool[]{true,false,true,false};
         int[] intarray = new int[]{7,9};
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "18446744073709551615";
         string str1 = "287346502836570928366";
-        //Console.WriteLine(sol.Solution0321(str, str1));
-        Util.PrintArray(sol.Solution0324(s1, intarray));
+        Console.WriteLine(sol.Solution0325(s1, s2));
+        //Util.PrintArray(sol.Solution0324(s1, intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void Inheritance()
+    {
+        Child a = new Child(2);
+        string name = a.GetName();
+        a.SetName("Lee");
+        Console.WriteLine($"ori:{name}, after:{a.GetName()}");
+
+        name = a.Name;
+        a.Name = "longname";
+        Console.WriteLine($"ori:{name}, after:{a.Name}");
     }
 
     private void Constructor()

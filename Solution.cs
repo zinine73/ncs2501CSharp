@@ -8,6 +8,37 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 로그인 성공?
+    /// </summary>
+    /// <param name="id_pw"></param>
+    /// <param name="db"></param>
+    /// <returns></returns>
+    public string Solution0325(string[] id_pw, string[,] db)
+    {
+        // db의 크기만큼 반복
+        for (int i = 0; i < db.GetLength(0); i++)
+        {
+            // id가 같은지
+            if (id_pw[0].Equals(db[i, 0]))
+            {
+                // pw도 같은지
+                if (id_pw[1].Equals(db[i, 1]))
+                {
+                    // login 성공
+                    return "login";
+                }
+                else
+                {
+                    // pw가 다름
+                    return "wrong pw";
+                }
+            }
+        }
+        // id도 없음
+        return "fail";
+    }
+
+    /// <summary>
     /// 캐릭터의 좌표
     /// </summary>
     /// <param name="keyinput"></param>
