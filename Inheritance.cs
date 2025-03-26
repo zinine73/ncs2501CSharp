@@ -1,5 +1,33 @@
+using System.Threading.Tasks;
+
 namespace MySystem
 {
+    public class OuterClass
+    {
+        private int aa = 70;
+
+        public class InnerClass
+        {
+            OuterClass instance;
+
+            public InnerClass(OuterClass value)
+            {
+                instance = value;
+            }
+
+            public async Task AccessVatiable(int num)
+            {
+                //aa = num;
+                this.instance.aa = num;
+            }
+
+            public void ShowVariable()
+            {
+                Console.WriteLine($"aa : {this.instance.aa}");
+            }
+        }
+    }
+
     public class Parent
     {
         public int num;

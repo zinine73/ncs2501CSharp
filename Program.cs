@@ -6,16 +6,26 @@ internal class Program
         Solution sol = new Solution();
         string[] s1 = ["rabbit04", "98761"];
         string[,] s2 = new string[,]{{"jaja11", "98761"}, {"krong0313", "29440"}, {"rabbit00", "111333"}};
-        bool[] b1 = new bool[]{true,false,true,false};
-        int[] intarray = new int[]{7,9};
+        bool[] b1 = [true, false, true, false, false, true];
+        int[] intarray = [6, 1, 5, 2, 3, 4];
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "18446744073709551615";
         string str1 = "287346502836570928366";
-        Console.WriteLine(sol.Solution0325(s1, s2));
+        Console.WriteLine(sol.Solution0326(intarray, b1));
         //Util.PrintArray(sol.Solution0324(s1, intarray));
         
         //Sample sam = new Sample();
         //sam.Test();
+    }
+
+    private void Outer()
+    {
+        //OuterClass outer = new OuterClass();
+        //OuterClass.InnerClass inner = new OuterClass.InnerClass(outer);
+        OuterClass.InnerClass inner = new OuterClass.InnerClass(new OuterClass());
+        inner.ShowVariable();
+        inner.AccessVatiable(60);
+        inner.ShowVariable();
     }
 
     private void Inheritance()
