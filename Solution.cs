@@ -8,6 +8,29 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 치킨 쿠폰
+    /// </summary>
+    /// <param name="chicken"></param>
+    /// <returns></returns>
+    public int Solution0327(int chicken)
+    {
+        int answer = 0;
+        // 쿠폰 수 변수 생성
+        int coupon = chicken;
+        // 쿠폰이 10장 이상이면 반복
+        while (coupon >= 10)
+        {
+            // 쿠폰 10장 빼고
+            coupon -= 10;
+            // 서비스 치킨 한마리 추가
+            answer++;
+            // 쿠폰 한장 추가
+            coupon++;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 전국 대회 선발 고사
     /// </summary>
     /// <param name="rank"></param>
