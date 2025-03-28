@@ -8,6 +8,28 @@ using System.Data.Common;
 class Solution
 {
     /// <summary>
+    /// 저주의 숫자 3
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0328(int n)
+    {
+        int answer = 0;
+        // n만큼 반복
+        for (int i = 0; i < n; i++)
+        {
+            // 특정조건일때만 건너뛰기
+            // '3'을 포함하거나 3으로 나누어 떨어질 때
+            do
+            {
+                // answer++
+                answer++;
+            } while(answer.ToString().Contains('3') || answer % 3 == 0);
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 치킨 쿠폰
     /// </summary>
     /// <param name="chicken"></param>

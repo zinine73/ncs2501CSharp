@@ -2,6 +2,65 @@ using System.Threading.Tasks;
 
 namespace MySystem
 {
+    interface ParentInterface
+    {
+        void myMethod(string str);
+    }
+
+    interface SubInterface : ParentInterface
+    {
+        void myMethod(string str, int i);
+    }
+
+    public class InterClass2 : SubInterface
+    {
+        public void myMethod(string str)
+        {
+            Console.WriteLine(str + " ParentInterface.myMethid() call!");
+        }
+        public void myMethod(string str, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine(str 
+                    + " SubInterface.myMethod() " + i + "call!");
+            }
+        }
+    }
+
+    interface IMyInterfaceA
+    {
+        void print();
+    }
+
+    interface IMyInterfaceB
+    {
+        void print();
+    }
+
+    public class InterClass : IMyInterfaceA, IMyInterfaceB
+    {
+        public void Run()
+        {
+            InterClass mc = new InterClass();
+            IMyInterfaceA imca = mc;
+            imca.print();
+
+            IMyInterfaceB imcb = mc;
+            imcb.print();
+        }
+
+        void IMyInterfaceA.print()
+        {
+            Console.WriteLine("IMyInterfaceA.print() 호출");
+        }
+
+        void IMyInterfaceB.print()
+        {
+            Console.WriteLine("IMyInterfaceB.print() 호출");
+        }
+    }
+
     public class OuterClass
     {
         private int aa = 70;

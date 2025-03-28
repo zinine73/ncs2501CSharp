@@ -11,7 +11,7 @@ internal class Program
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "18446744073709551615";
         string str1 = "287346502836570928366";
-        Console.WriteLine(sol.Solution0327(1081));
+        Console.WriteLine(sol.Solution0328(40));
         //Util.PrintArray(sol.Solution0324(s1, intarray));
         
         //Sample sam = new Sample();
