@@ -4,9 +4,58 @@ using System.Text;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Data.Common;
+using System.Runtime.CompilerServices;
 
 class Solution
 {
+    /// <summary>
+    /// 코드 처리하기
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public string Solution0331(string code)
+    {
+        string ret = string.Empty;
+        // mode, idx 변수 만들기
+        int mode = 0;
+        int idx = 0;
+        // code를 순회하면서
+        foreach (var item in code)
+        {
+            // item 이 1인 경우 모드 체인지
+            if (item.Equals('1'))
+            {
+                mode = 1 - mode;
+                idx++;
+                continue;
+            }
+            // mode의 값에 따라
+            if (mode == 0)
+            {
+                // idx의 값에 따라
+                if (idx % 2 == 0)
+                {
+                    ret += item;
+                }
+            }
+            else // mode == 1
+            {
+                // idx의 값에 따라
+                if (idx % 2 != 0)
+                {
+                    ret += item;
+                }
+            }
+            idx++;
+        }
+        // ret 값이 없는 경우
+        if (ret.Length == 0)
+        {
+            ret = "EMPTY";
+        }
+        return ret;
+    }
+
     /// <summary>
     /// 저주의 숫자 3
     /// </summary>
