@@ -11,8 +11,8 @@ internal class Program
         int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
-        Console.WriteLine(sol.Solution0331(str));
-        //Util.PrintArray(sol.Solution0324(s1, intarray));
+        //Console.WriteLine(sol.Solution0331(str));
+        Util.PrintArray(sol.Solution0401(10,20));
         
         //Sample sam = new Sample();
         //sam.Test();

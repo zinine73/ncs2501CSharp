@@ -9,6 +9,40 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 배열 만들기 2
+    /// </summary>
+    /// <param name="l"></param>
+    /// <param name="r"></param>
+    /// <returns></returns>
+    public int[] Solution0401(int l, int r)
+    {
+        int[] answer;
+        // 리스트를 하나 만들고
+        var list = new List<int>();
+        // l에서 r까지 반복
+        for (int i = l; i <= r; i++)
+        {
+            // 5로 나누어 떨어지는지 체크
+            if (i % 5 != 0) continue;
+            // '0','5'로만 이루어졌는지 체크
+            string str = i.ToString();
+            if (str.Replace("0", "").Replace("5", "").Length == 0)
+            {
+                // 리스트에 넣기
+                list.Add(i);
+            }
+        }
+        // 리스트를 배열로 변환
+        answer = list.ToArray<int>();
+        // 값이 하나도 없으면 -1을 넣기
+        if (list.Count == 0)
+        {
+            answer = new int[]{-1};
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 코드 처리하기
     /// </summary>
     /// <param name="code"></param>
