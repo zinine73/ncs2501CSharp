@@ -4,7 +4,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = ["rabbit04", "98761"];
+        string[] s1 = ["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"];
         string[,] s2 = new string[,]{{"jaja11", "98761"}, {"krong0313", "29440"}, {"rabbit00", "111333"}};
         bool[] b1 = [true, false, true, false, false, true];
         int[] intarray = [6, 1, 5, 2, 3, 4];
@@ -12,7 +12,7 @@ internal class Program
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         //Console.WriteLine(sol.Solution0331(str));
-        Util.PrintArray(sol.Solution0401(10,20));
+        Util.PrintArray(sol.Solution0402(s1));
         
         //Sample sam = new Sample();
         //sam.Test();

@@ -9,6 +9,40 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// OX퀴즈
+    /// </summary>
+    /// <param name="quiz"></param>
+    /// <returns></returns>
+    public string[] Solution0402(string[] quiz)
+    {
+        // 퀴즈의 길이만큼 answer를 생성
+        string[] answer = new string[quiz.Length];
+        // 퀴즈 길이만큼 순회
+        for (int i = 0; i < quiz.Length; i++)
+        {
+            // 퀴즈 문장을 분리
+            string[] stuff = quiz[i].Split(' ');
+            int first = Convert.ToInt32(stuff[0]);
+            int second = Convert.ToInt32(stuff[2]);
+            int result = Convert.ToInt32(stuff[4]);
+            // 연산자가 뭐냐 판단
+            bool isRight;
+            if (stuff[1].Equals("+"))
+            {
+                isRight = (first + second == result);
+            }
+            else
+            {
+                isRight = (first - second == result);
+            }
+            //isRight = stuff[1].Equals("+") ? first + second == result : first - second == result;
+            // 결과에 따른 값을 answer에 대입
+            answer[i] = isRight ? "O" : "X";
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열 만들기 2
     /// </summary>
     /// <param name="l"></param>
