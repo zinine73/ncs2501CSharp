@@ -9,6 +9,35 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 다음에 올 숫자
+    /// </summary>
+    /// <param name="common"></param>
+    /// <returns></returns>
+    public int Solution0403(int[] common)
+    {
+        int answer = 0;
+        // 인덱스 0, 1 두개의 값으로 계산되는 결과를 담은 변수
+        int first = common[1] - common[0];
+        // 인덱스 1, 2 두개의 값으로 계산되는 결과를 담은 변수
+        int second = common[2] - common[1];
+        // 두개의 변수가 같은가
+        if (first == second)
+        {
+            // 같으면 등차수열
+            // answer 계산
+            answer = common[common.Length - 1] + first;
+        }
+        else
+        {
+            // 다르면 등비수열
+            // answer 계산
+            int ratio = common[1] / common[0];
+            answer = common[common.Length - 1] * ratio;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// OX퀴즈
     /// </summary>
     /// <param name="quiz"></param>
