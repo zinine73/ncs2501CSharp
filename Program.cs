@@ -16,11 +16,20 @@ internal class Program
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         
-        Console.WriteLine(sol.Solution0403(intarray));
-        //Util.PrintArray(sol.Solution0402(s1));
-        
-        //Sample sam = new Sample();
-        //sam.Test();
+        //Console.WriteLine(sol.Solution0403(intarray));
+        Util.PrintArray(sol.Solution0404(5, 5));
+    }
+
+    void PropertyTest()
+    {
+        Student st1 = new Student();
+        //st1.name = "captain america";
+        //st1.SetName("captain america");
+        //st1.SetName("kim");
+        //st1.Name = "captain america";
+        st1.Name = "lee";
+        st1.Compare("jang");
+        Console.WriteLine(st1.Height);
     }
 
     private void AttributeTest()
@@ -346,5 +355,67 @@ internal class Program
         myc.printYearMoney();
 
         myc.Init("lee",20);
+    }
+}
+class Student
+{
+    private string name;
+    private int age;
+    private int height = 175;
+    public int Height => height;
+
+    public int Age
+    {
+        get => age;
+        set => age = value;
+    }
+
+    /*
+    public int Age
+    {
+        get; set;
+    }
+    */
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+        set
+        {
+            if (value.Length > 3)
+            {
+                Console.WriteLine("over 3!!!");
+            }
+            else
+            {
+                name = value;
+            }
+        }
+    }
+    /*
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetName(string value)
+    {
+        if (value.Length > 3)
+        {
+            Console.WriteLine("over 3!!!");
+        }
+        else
+        {
+            name = value;
+        }
+    }
+    */
+
+    public void Compare(string str)
+    {
+        Name = str;
+        Console.WriteLine(name);
     }
 }

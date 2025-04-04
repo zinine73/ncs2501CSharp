@@ -9,6 +9,28 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 연속된 수의 합
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="total"></param>
+    /// <returns></returns>
+    public int[] Solution0404(int num, int total)
+    {
+        int[] answer = new int[num];
+        // total을 num으로 나눈 인덱스 변수
+        int idx = total / num;
+        // 인덱스의 처음 시작 위치 조정
+        idx = idx - (num - 1) / 2;
+        // for문 num만큼 반복
+        for (int i = 0; i < num; i++)
+        {
+            // answer배열에 값 넣기
+            answer[i] = idx + i;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 다음에 올 숫자
     /// </summary>
     /// <param name="common"></param>
