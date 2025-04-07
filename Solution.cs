@@ -9,6 +9,55 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 안전지대
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    public int Solution0407(int[,] board)
+    {
+        int answer = 0;
+        // 배열의 크기(행과 열)를 구한다
+        int len = board.GetLength(0);
+        // 주어진 보드의 테두리가 있는 새로운 보드를 만든다
+        int[,] temp = new int[len + 2, len + 2];
+        // 행과 열 크기만큼 순회
+        for (int x = 1; x <= len; x++)
+        {
+            for (int y = 1; y <= len; y++)
+            {
+                // 폭탄이 있냐
+                if (board[x - 1, y - 1] == 1)
+                {
+                    // (8방향 + 원위치), 즉 9군데의 값을 변경
+                    temp[x - 1, y - 1]++;
+                    temp[x - 1, y    ]++;
+                    temp[x - 1, y + 1]++;
+                    temp[x    , y - 1]++;
+                    temp[x    , y    ]++;
+                    temp[x    , y + 1]++;
+                    temp[x + 1, y - 1]++;
+                    temp[x + 1, y    ]++;
+                    temp[x + 1, y + 1]++;
+                }
+            }
+        }
+
+        // 행과 열 크기만큼 순회
+        for (int x = 1; x <= len; x++)
+        {
+            for (int y = 1; y <= len; y++)
+            {
+                // 0인 곳만 answer에 더하기
+                if (temp[x, y] == 0)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 연속된 수의 합
     /// </summary>
     /// <param name="num"></param>

@@ -12,12 +12,12 @@ internal class Program
         string[,] s2 = new string[,]{{"jaja11", "98761"}, {"krong0313", "29440"}, {"rabbit00", "111333"}};
         bool[] b1 = [true, false, true, false, false, true];
         int[] intarray = [2,6,18];
-        int[,] int2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
+        int[,] int2 = new int[,]{{0, 0, 0, 0, 0},{0, 0, 0, 0, 0},{0, 0, 0, 0, 0},{0, 0, 1, 1, 0},{0, 0, 0, 0, 0}};
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         
-        //Console.WriteLine(sol.Solution0403(intarray));
-        Util.PrintArray(sol.Solution0404(5, 5));
+        Console.WriteLine(sol.Solution0407(int2));
+        //Util.PrintArray(sol.Solution0404(5, 5));
     }
 
     void PropertyTest()
