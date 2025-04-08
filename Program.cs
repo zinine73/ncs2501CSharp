@@ -16,11 +16,8 @@ internal class Program
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         
-        //Console.WriteLine(sol.Solution0407(int2));
+        Console.WriteLine(sol.Solution0408(6,4,2,5));
         //Util.PrintArray(sol.Solution0404(5, 5));
-
-        LinqTest ltest = new LinqTest();
-        ltest.Test();
     }
 
     void PropertyTest()

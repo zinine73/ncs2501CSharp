@@ -9,6 +9,113 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 주사위 게임3
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <param name="d"></param>
+    /// <returns></returns>
+    public int Solution0408(int a, int b, int c, int d)
+    {
+        int answer = 0;
+        int[] dice = new int[7];
+        dice = IntoDice(a, dice);
+        dice = IntoDice(b, dice);
+        dice = IntoDice(c, dice);
+        dice = IntoDice(d, dice);
+        // 4개가 모두 같은 숫자인 경우
+        if (dice.Contains(4))
+        {
+            for (int p = 1; p <= 6; p++)
+            {
+                if (dice[p] == 4)
+                {
+                    answer = p * 1111;
+                    break;
+                }
+            }
+        }
+        // 3 - 1
+        else if (dice.Contains(3))
+        {
+            for (int p = 1; p <= 6; p++)
+            {
+                if (dice[p] == 3)
+                {
+                    for (int q = 1; q <= 6; q++)
+                    {
+                        if (dice[q] == 1)
+                        {
+                            answer = (10 * p + q) * (10 * p + q);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else if (dice.Contains(2))
+        {
+            // 2 - 1 - 1 : p를 구할 필요가 없다
+            if (dice.Contains(1))
+            {
+                for (int q = 1; q <= 6; q++)
+                {
+                    if (dice[q] == 1)
+                    {
+                        for (int r = q + 1; r <= 6; r++)
+                        {
+                            if (dice[r] == 1)
+                            {
+                                answer = q * r;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            // 2 - 2
+            else
+            {
+                for (int p = 1; p <= 6; p++)
+                {
+                    if (dice[p] == 2)
+                    {
+                        for (int q = p + 1; q <= 6; q++)
+                        {
+                            if (dice[q] == 2)
+                            {
+                                // q는 p보다 크므로
+                                answer = (p + q) * (q - p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        // 1 - 1 - 1 - 1
+        else
+        {
+            answer = 6;
+            for (int i = 1; i <= 6; i++)
+            {
+                if ((dice[i] == 1) && (answer > i))
+                {
+                    answer = i;
+                }
+            }
+        }
+        return answer;
+    }
+    public int[] IntoDice(int value, int[] dice)
+    {
+        dice[value]++;
+        return dice;
+    }
+
+    /// <summary>
     /// 안전지대
     /// </summary>
     /// <param name="board"></param>
