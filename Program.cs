@@ -16,8 +16,39 @@ internal class Program
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         
-        Console.WriteLine(sol.Solution0408(6,4,2,5));
+        //Console.WriteLine(sol.Solution0408(6,4,2,5));
         //Util.PrintArray(sol.Solution0404(5, 5));
+    }
+
+    void TupleTest()
+    {
+        var list = new List<int>();
+        list.Add(3);
+        list.Add(10);
+        list.Add(42);
+        TupleTest tt = new TupleTest();
+        var rv = tt.Calculate(list);
+        Console.WriteLine($"count:{rv.count}, sum:{rv.sum}, average:{rv.average}");
+        Console.WriteLine($"count:{rv.Item1}, sum:{rv.Item2}, average:{rv.Item3}");
+
+        (int cnt, int sum, double avg) = tt.Calculate(list);
+        (var cnt2, var sum2, var avg2) = tt.Calculate(list);
+        (cnt, sum, avg) = tt.Calculate(list);
+
+        (int, float) myVal = (1, 3.14f);
+        int a = myVal.Item1;
+        float b = myVal.Item2;
+
+        (int num, float pi) myVal2 = (2, 3.2f);
+        a = myVal2.num;
+        b = myVal2.pi;
+
+        var myVal3 = (3, 0.01f);
+        a = myVal3.Item1;
+        b = myVal3.Item2;
+
+        var rv2 = tt.Calc(100, 30);
+        Console.WriteLine($"sum:{rv2.sum}, sub:{rv2.sub}");
     }
 
     void PropertyTest()
