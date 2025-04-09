@@ -9,6 +9,39 @@ using System.Runtime.CompilerServices;
 class Solution
 {
     /// <summary>
+    /// 겹치는 선분의 길이
+    /// </summary>
+    /// <param name="lines"></param>
+    /// <returns></returns>
+    public int Solution0409(int[,] lines)
+    {
+        int answer = 0;
+        // int배열을 전체 크기로 하나 만들고
+        int min = -100;
+        int max = 100;
+        int len = max - min + 1;
+        int[] line = new int[len];
+        // lines 를 순회하면서
+        for (int i = 0; i < 3; i++)
+        {
+            // line에 해당하는 값을 int배열에서 값을 증가
+            for (int j = lines[i, 0]; j < lines[i, 1]; j++)
+            {
+                line[j - min]++;
+            }
+        }
+        // int배열에서 값이 2이상인 부분의 갯수를 구한다
+        for (int i = min; i <= max; i++)
+        {
+            if (line[i - min] > 1)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 주사위 게임3
     /// </summary>
     /// <param name="a"></param>

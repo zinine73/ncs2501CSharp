@@ -12,11 +12,11 @@ internal class Program
         string[,] s2 = new string[,]{{"jaja11", "98761"}, {"krong0313", "29440"}, {"rabbit00", "111333"}};
         bool[] b1 = [true, false, true, false, false, true];
         int[] intarray = [2,6,18];
-        int[,] int2 = new int[,]{{0, 0, 0, 0, 0},{0, 0, 0, 0, 0},{0, 0, 0, 0, 0},{0, 0, 1, 1, 0},{0, 0, 0, 0, 0}};
+        int[,] int2 = new int[,]{{0,5},{3,9},{1,10}};
         string str = "abc1abc1abc";
         string str1 = "287346502836570928366";
         
-        //Console.WriteLine(sol.Solution0408(6,4,2,5));
+        Console.WriteLine(sol.Solution0409(int2));
         //Util.PrintArray(sol.Solution0404(5, 5));
     }
 
